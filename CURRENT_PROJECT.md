@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Company 001 — Offer 001 signal test. Human Decision Intelligence is the long-term program name; the first consumer application defines operational decision states, honest interventions, minimal-data prediction targets, Decision Quality per Customer, Customer Relationship Value, and regret prediction. Company 001 has selected Expertise Ladder, espresso-ground spill during puck preparation, and one fit-checked 58 mm magnetic dosing-funnel candidate. No behavioral-profile architecture, inventory, payment, advertising, or new application page is authorized.
+Company 001 — Problem Discovery 001 (Experiment Zero). Human Decision Intelligence remains the long-term program. Offer 001 was vetoed before exposure because ACE had not ranked espresso frustrations or earned a mechanism, solution, or product recommendation. Espresso is a candidate laboratory only. The active work is a source-balanced, permission-based ranking of recurring home-espresso problems by frequency, consequence, recurrence, and workaround failure. No product test, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
 
 ## Completed work
 
@@ -28,7 +28,8 @@ Company 001 — Offer 001 signal test. Human Decision Intelligence is the long-t
 - Working causal-claim doctrine and future claim-blinding direction, intentionally documented without changing Mechanism Cards or adding architecture.
 - Consumer Behavior Intelligence v0.1: research synthesis, decision journey, trigger/barrier taxonomy, signal-to-state uncertainty map, causal measurement roadmap, privacy limits, three candidate-context applications, and ten prioritized working hypotheses.
 - Human Decision Intelligence v0.2: Decision Quality per Customer, Customer Relationship Value, direct regret measurement, and Reality-as-governance doctrine.
-- Company 001 Offer 001: one mechanism, one narrow espresso-workflow problem, one product candidate, honest no-buy criteria, public signal-test copy, evidence fields, and advance/reject gates.
+- Archived and explicitly vetoed Company 001 Offer 001 before any exposure, preserving it only as a candidate laboratory and cultural correction.
+- Preregistered Problem Discovery 001 with six evidence strata, neutral episode coding, a consequence scale, source-balanced ranking, a top-five admission gate, moderator-permission language, and an empty minimal evidence log.
 
 ## Current architecture
 
@@ -47,11 +48,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Publish the exact no-payment signal-test copy in `company_001/OFFER_001.md` once in a venue whose rules permit transparent research questions.
-2. Record fit-qualified responses without collecting public email addresses; stop after seven days or 25 substantive responses.
-3. Apply the advance/reject gates without moving them after seeing results.
-4. If the gate passes, establish a business contact/privacy channel and seek a disclosed manufacturer partnership or another authorized transaction path.
-5. Only then design a transaction experiment with regret, return, contribution, support, and customer-control outcomes.
+1. Select one relevant community account and ask moderators for permission using the exact request in `company_001/PROBLEM_DISCOVERY_001.md`.
+2. Qualify and predeclare the manual sampling rule for each planned evidence source before extracting episodes.
+3. Collect problem episodes across the six strata in `company_001/PROBLEM_DISCOVERY_001_EVIDENCE.csv`; do not collect product interest.
+4. Freeze and audit the dataset, publish the full ranking, and apply the unchanged top-five gate.
+5. Compare only admitted problems against all three Mechanism Cards; select no product before a mechanism/problem pair survives separate falsification.
 
 No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 

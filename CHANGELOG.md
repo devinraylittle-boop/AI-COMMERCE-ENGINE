@@ -16,6 +16,8 @@ All notable changes follow Keep a Changelog conventions.
 - Added Consumer Behavior Intelligence v0.1 as research-only doctrine: operational decision states, bounded predictions, ethical interventions, minimal-data governance, causal evaluation, candidate-context applications, and ten falsifiable behavioral hypotheses.
 - Advanced the program to Human Decision Intelligence v0.2 with Decision Quality per Customer, Customer Relationship Value, regret prediction, and Reality-first governance.
 - Selected Company 001 Offer 001: Expertise Ladder applied to espresso-ground spill with one fit-checked 58 mm dosing-funnel candidate, explicit no-buy criteria, public test copy, and fixed advance/reject gates.
+- Vetoed Offer 001 before exposure because the espresso problem landscape and mechanism had not been earned; archived the work as a nonoperative candidate laboratory.
+- Added Problem Discovery 001 (Experiment Zero): permission-based problem collection, six source strata, neutral coding, source-balanced frequency/consequence ranking, top-five admission gates, and a minimal evidence log.
 
 ### Work Order 003
 

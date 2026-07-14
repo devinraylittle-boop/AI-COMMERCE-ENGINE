@@ -32,6 +32,10 @@ The company-level North Star is **Decision Quality per Customer**. It asks wheth
 
 Reality is Chairman of the Board. No founder, model, metric, or narrative may overrule observed outcomes. ACE optimizes honest decisions; it does not optimize purchases in isolation.
 
+### Problem-before-product law
+
+ACE earns recommendations in this order: rank problems, establish consequence and recurrence, observe urgency and current workarounds, select a mechanism, compare solution classes, and only then evaluate products. A product may instantiate an earned mechanism; an interesting product may not select the mechanism retroactively.
+
 ### Decision Quality per Customer
 
 This is initially a measurement framework, not a single fabricated score. Report its components separately until real evidence supports aggregation:
