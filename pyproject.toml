@@ -31,6 +31,7 @@ dev = [
 
 [project.scripts]
 ai-commerce-seed = "ai_commerce_engine.seed:main"
+ai-commerce-mechanisms = "ai_commerce_engine.mechanism_cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ai_commerce_engine"]

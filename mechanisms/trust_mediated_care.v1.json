@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "mechanism_id": "trust_mediated_care",
+  "version": 1,
+  "name": "Trust-Mediated Care",
+  "status": "hypothesis",
+  "causal_claim": "For consequential care purchases, transparent suitability and safety guidance can reduce buyer uncertainty enough to support a trusted offer without requiring unscalable personalized advice.",
+  "why_it_might_work": [
+    "Dog owners make emotionally consequential decisions for an animal that cannot evaluate products for itself.",
+    "Product suitability varies by size, behavior, chewing style, training stage, and supervision context.",
+    "An honest recommendation can differentiate on judgment instead of novelty or price."
+  ],
+  "supporting_evidence": [
+    {
+      "evidence_id": "tmc_appa_2026",
+      "proposition": "APPA reports 71 million U.S. dog-owning households and a large, resilient parent market.",
+      "source_reference": "https://americanpetproducts.org/news/u.s.-pet-industry-reaches-158-billion-in-2025-poised-for-continued-growth-in-2026",
+      "provenance": "Observed",
+      "confidence": "High",
+      "interpretation_limit": "Parent-market spending does not establish demand or economics for training and enrichment offers."
+    },
+    {
+      "evidence_id": "tmc_akc_safety",
+      "proposition": "AKC guidance treats durability, sizing, supervision, ingestion, and tooth risk as meaningful toy-selection concerns.",
+      "source_reference": "https://www.akc.org/canine-partners/a-guide-to-toy-shopping-for-your-pup/",
+      "provenance": "Observed",
+      "confidence": "High",
+      "interpretation_limit": "Safety guidance establishes decision complexity, not willingness to pay for better guidance."
+    }
+  ],
+  "contradicting_evidence": [
+    {
+      "evidence_id": "tmc_value_pressure",
+      "proposition": "APPA reports that 22 percent of pet owners were spending less, creating pressure against unsupported premiums.",
+      "source_reference": "https://americanpetproducts.org/news/u.s.-pet-industry-reaches-158-billion-in-2025-poised-for-continued-growth-in-2026",
+      "provenance": "Observed",
+      "confidence": "High",
+      "interpretation_limit": "The public summary does not isolate dog enrichment buyers or explain the cause of reduced spending."
+    },
+    {
+      "evidence_id": "tmc_support_burden",
+      "proposition": "Individual animal differences may make safe matching too personalized to automate economically.",
+      "source_reference": "research/SPRINT_001_GREAT_ELIMINATION.md",
+      "provenance": "Hypothesis",
+      "confidence": "Medium",
+      "interpretation_limit": "No customer-support observation or commercial test has been conducted."
+    }
+  ],
+  "required_conditions": [
+    "A recurring decision problem must appear across independent review contexts and owner interviews.",
+    "Suitability can be expressed with conservative self-service rules and clear exclusions.",
+    "A nonfood, nonmedical, compact solution space exists with testable safety and durability.",
+    "Trust guidance changes actual selection behavior rather than merely sounding desirable."
+  ],
+  "failure_conditions": [
+    "Useful recommendations require individualized professional advice.",
+    "The dominant pain is product-specific and does not transfer across contexts.",
+    "Owners choose primarily on price or appearance despite recognizing safety uncertainty.",
+    "A safe offer cannot avoid unsupported behavioral or health claims."
+  ],
+  "falsification_experiment": {
+    "experiment_id": "ofp_tmc_evidence_001",
+    "question": "Does a recurring, self-service trust problem exist in dog training and enrichment purchases?",
+    "hypothesis": "The same actionable safety or suitability problem will appear independently in authorized reviews and unprompted owner purchase histories.",
+    "null_hypothesis": "Observed concerns are isolated to individual products or require personalized advice, so no scalable trust mechanism exists.",
+    "evidence_sources": [
+      "At least 100 authorized or user-provided reviews across three enrichment contexts and at least two sources.",
+      "Five structured interviews about owners' most recent training or enrichment purchases."
+    ],
+    "sampling_plan": [
+      "Remove exact and probable duplicates before theme counts and preserve source distribution.",
+      "Predeclare safety, durability, cleaning, difficulty, fit, and guidance themes before classification.",
+      "Ask interviews about the last behavior and purchase before showing the mechanism hypothesis."
+    ],
+    "survival_criteria": [
+      "At least one predeclared actionable theme appears in 15 or more nonduplicate sample reviews, in all three contexts, and in both independent sources.",
+      "At least three of five owners independently describe the same problem in an actual past purchase.",
+      "The problem can be reduced to conservative self-service decision rules without professional or medical advice."
+    ],
+    "falsification_criteria": [
+      "No actionable theme crosses both evidence sources and all three contexts.",
+      "Interview evidence shows individualized advice is necessary for a safe recommendation.",
+      "Owners' actual purchase decisions were unaffected by the proposed trust information."
+    ],
+    "known_confounders": [
+      "A convenience review corpus does not estimate market prevalence.",
+      "Negative reviews overrepresent failures and interviews are vulnerable to recall and courtesy bias.",
+      "Brand reputation may be mistaken for trust in the selection mechanism."
+    ],
+    "validation_cost_ceiling_usd": "25.00",
+    "prohibited_actions": [
+      "No scraping, advertising, inventory, supplier outreach, animal testing, or public product claims."
+    ],
+    "next_decision": "Reject the mechanism or advance one narrowly defined trust problem to a no-inventory behavior test."
+  },
+  "confidence": "Low",
+  "confidence_rationale": "Broad demand and decision complexity are observed, but willingness to act on self-service trust guidance is untested.",
+  "transferability": {
+    "status": "unknown",
+    "boundary_conditions": [
+      "The first instance is limited to dog training and enrichment and excludes food, supplements, and medical products."
+    ],
+    "next_replication_test": "After one commercial instance passes, test the same guidance mechanism in another consequential care market without reusing its outcome as evidence."
+  },
+  "instruction_status": "not_earned",
+  "current_instruction": null,
+  "decision_owner": "Founder",
+  "last_updated": "2026-07-14"
+}

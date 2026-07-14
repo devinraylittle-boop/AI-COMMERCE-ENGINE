@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "mechanism_id": "expertise_ladder",
+  "version": 1,
+  "name": "Expertise Ladder",
+  "status": "hypothesis",
+  "causal_claim": "In a frequent enthusiast ritual, stage-appropriate education and compatibility guidance can convert recurring workflow problems into a progression of trusted purchases without encouraging unnecessary upgrades.",
+  "why_it_might_work": [
+    "Coffee is a frequent home ritual with an identifiable progression from beginner to enthusiast.",
+    "The result depends on interactions among skill, beans, water, workflow, maintenance, and equipment.",
+    "Education can make an offer more useful while explicitly identifying when an upgrade is unnecessary."
+  ],
+  "supporting_evidence": [
+    {
+      "evidence_id": "el_nca_participation",
+      "proposition": "NCA reports that 66 percent of American adults drank coffee in the past day in Spring 2025.",
+      "source_reference": "https://www.ncausa.org/Research-Trends/National-Coffee-Data-Trends",
+      "provenance": "Observed",
+      "confidence": "High",
+      "interpretation_limit": "Coffee participation does not establish demand for espresso education or gear."
+    },
+    {
+      "evidence_id": "el_home_ritual",
+      "proposition": "A public NCA snapshot reports that most coffee drinkers prepared coffee at home and specialty consumption had grown since 2021.",
+      "source_reference": "https://www.ncausa.org/Newsroom/Grounds-for-celebration-Americans-remain-committed-to-coffee",
+      "provenance": "Observed",
+      "confidence": "Medium",
+      "interpretation_limit": "The public snapshot is dated and the full method and segment economics are not available without the paid report."
+    }
+  ],
+  "contradicting_evidence": [
+    {
+      "evidence_id": "el_expertise_cost",
+      "proposition": "Credible recommendations may require machine-specific expertise and continuously updated compatibility knowledge.",
+      "source_reference": "research/SPRINT_001_GREAT_ELIMINATION.md",
+      "provenance": "Hypothesis",
+      "confidence": "Medium",
+      "interpretation_limit": "No support-time measurement or compatibility corpus has been collected."
+    },
+    {
+      "evidence_id": "el_creator_trust",
+      "proposition": "Customers may trust independent creators and communities more than a retailer that profits from the recommendation.",
+      "source_reference": "research/SPRINT_001_GREAT_ELIMINATION.md",
+      "provenance": "Hypothesis",
+      "confidence": "Low",
+      "interpretation_limit": "No source-attribution study or customer interview has tested this concern."
+    }
+  ],
+  "required_conditions": [
+    "A recurring workflow problem must appear across more than one machine or preparation context.",
+    "Customers must use education or compatibility information in actual purchase decisions.",
+    "The first solution space avoids electrical, pressure-bearing, and fragile equipment.",
+    "Content maintenance and support cost remain proportionate to contribution margin."
+  ],
+  "failure_conditions": [
+    "Dominant problems are machine-specific and require expert troubleshooting.",
+    "Customers consume education but purchase solely from the lowest-price marketplace listing.",
+    "Progression depends on promoting unnecessary upgrades that conflict with ACE's trust standard.",
+    "Compatibility churn makes guidance obsolete before it earns back its maintenance cost."
+  ],
+  "falsification_experiment": {
+    "experiment_id": "ofp_el_evidence_001",
+    "question": "Does education resolve a recurring cross-context coffee workflow problem that affects actual buying behavior?",
+    "hypothesis": "At least one workflow or compatibility problem recurs across authorized reviews and customers' past purchases, and education materially influenced how they chose a solution.",
+    "null_hypothesis": "Problems are machine-specific, aesthetic, or content-only and do not create a scalable commercial mechanism.",
+    "evidence_sources": [
+      "At least 100 authorized or user-provided reviews across beginner workflow, maintenance, and compatibility contexts and at least two sources.",
+      "Five structured interviews spanning beginner and experienced home coffee preparation."
+    ],
+    "sampling_plan": [
+      "Remove duplicates and preserve source, product context, machine context, rating, and date.",
+      "Predeclare mess, cleaning, wasted inputs, compatibility, consistency, and upgrade-regret themes.",
+      "Ask customers to reconstruct their last purchase and information path before asking opinions about education."
+    ],
+    "survival_criteria": [
+      "At least one actionable theme appears in 15 or more nonduplicate reviews, across all three contexts and both sources.",
+      "At least three of five interviewees identify information or compatibility evidence that changed an actual purchase or prevented one.",
+      "The problem admits a cross-platform first test without electrical or pressure-bearing products."
+    ],
+    "falsification_criteria": [
+      "No problem transfers across contexts and sources.",
+      "Purchase histories show that education is consumed but does not affect selection behavior.",
+      "A credible recommendation requires machine-specific support that defeats lean automation."
+    ],
+    "known_confounders": [
+      "Enthusiast communities may overrepresent high-spending and technically confident users.",
+      "Review complaints can reflect poor technique rather than product failure.",
+      "Interviewees may rationalize purchases after the fact."
+    ],
+    "validation_cost_ceiling_usd": "25.00",
+    "prohibited_actions": [
+      "No scraping, advertising, inventory, affiliate publishing, supplier outreach, or equipment purchase."
+    ],
+    "next_decision": "Reject the mechanism or advance one cross-platform workflow problem to a no-inventory information-choice test."
+  },
+  "confidence": "Low",
+  "confidence_rationale": "Participation and ritual frequency are observed; the link between education, purchase behavior, and scalable economics is not.",
+  "transferability": {
+    "status": "unknown",
+    "boundary_conditions": [
+      "The first instance is limited to home coffee workflow and excludes machines, electrical parts, and pressure-bearing components."
+    ],
+    "next_replication_test": "After one instance passes, test the education-and-progression mechanism in a second enthusiast hobby with independent evidence."
+  },
+  "instruction_status": "not_earned",
+  "current_instruction": null,
+  "decision_owner": "Founder",
+  "last_updated": "2026-07-14"
+}

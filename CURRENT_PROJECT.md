@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Work Order 003 - compliant review-mining foundation. Phase F is implemented on `feature/review-mining-foundation`; Mission Control and later Work Order 002 objectives remain open.
+Operation First Principle - Mechanism Verification for Company 001. The compliant review-mining foundation is complete; the active objective is to determine which of three commercial mechanisms deserves a first no-inventory behavior test. No Mission Control or additional feature page is authorized.
 
 ## Completed work
 
@@ -21,6 +21,9 @@ Work Order 003 - compliant review-mining foundation. Phase F is implemented on `
 - Original-text preservation, layered duplicate detection, auditable manual duplicate decisions, a centralized taxonomy, deterministic classification, versioned human correction/restoration, and scoped reclassification.
 - Product/batch review analytics, quality warnings, attention queues, Markdown/JSON reports, and clearly fictional multi-product demonstration reviews.
 - Git repository initialized with synchronized `main`; Work Order 003 is developed through logical commits on a feature branch.
+- Sprint 001 market elimination with three finalist contexts and separate profit, learning, and automation rankings.
+- Three machine-readable Mechanism Cards for Trust-Mediated Care, Expertise Ladder, and Friction Removal, with validation that prevents premature earned instructions.
+- Operation First Principle collection protocol, preregistered falsification gates, interview script, and $75 aggregate research ceiling.
 
 ## Current architecture
 
@@ -30,7 +33,7 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 - Experiment updates still need a versioned edit workflow; product editing is now versioned with field-level history and rollback-as-new-version.
 - Authentication and per-user authorization are not implemented; the application is intended for a trusted local operator.
-- Automated tests cover critical deterministic services and migration lifecycle; the verified suite has 35 tests and 58% aggregate statement coverage. Streamlit has an application and Review Mining page smoke test, but form interactions are not exhaustively automated.
+- Automated tests cover critical deterministic services and migration lifecycle; the verified suite has 39 tests and 59% aggregate statement coverage. Streamlit has an application and Review Mining page smoke test, but form interactions are not exhaustively automated.
 - Mission Control/action queue, provider adapters, and Profit Sprint are not implemented (Work Order 002 Phases G-I).
 - Evidence corrections cannot yet link a superseded record.
 - Product editing currently exposes core identity, research notes, and every financial assumption; remaining descriptive product fields need the same form treatment.
@@ -39,9 +42,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Perform the Work Order 003 manual acceptance test with fictional data and review the feature branch.
-2. Build lean Mission Control and an actionable, audited action queue from actual project state.
-3. Reuse aggregate review themes in the Research Workbench without treating individual reviews as representative.
+1. Run `ai-commerce-mechanisms mechanisms --total-budget-ceiling 75` and preserve the unchanged v1 cards before real collection.
+2. Document two authorized review sources per mechanism; public visibility alone is not authorization.
+3. Recruit five recent-behavior interviewees per mechanism using `research/OPERATION_FIRST_PRINCIPLE.md`.
+4. Dry-run one small authorized import and verify provenance, duplicates, source distribution, and human-review queues.
+5. Collect evidence against the preregistered survival and falsification criteria; no advertising, inventory, or supplier outreach.
 
 ## Commands
 
@@ -49,6 +54,7 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 python -m pip install -e ".[dev]"
 alembic upgrade head
 streamlit run src/ai_commerce_engine/app.py
+ai-commerce-mechanisms mechanisms --total-budget-ceiling 75
 pytest
 ruff check .
 ruff format --check .
@@ -63,7 +69,7 @@ mypy src
 - Consequential status changes require a reason and create history plus audit rows.
 - All outside actions remain manual and require human approval.
 - Work Order 003 decisions: uploaded file bytes are not retained; import batches and original review bodies are immutable in ORM paths; duplicates remain inspectable; fuzzy matching requires same source/rating/non-missing date and 96% similarity; reclassification preserves human-added themes; all analytics are explicitly sample-scoped.
-- Verification on 2026-07-13: Ruff and format clean, mypy clean across 31 source files, 35 tests passing at 58% aggregate statement coverage, Alembic upgrade and schema-drift checks clean, import smoke clean, Review Mining page smoke clean, fictional seed idempotent, and diff whitespace check clean.
+- Verification on 2026-07-14: Ruff and format clean, mypy clean across 34 source files, 39 tests passing at 59% aggregate statement coverage, all three Mechanism Cards valid under the $75 aggregate ceiling, and diff whitespace clean. Existing migration lifecycle, import, Review Mining smoke, and fictional-seed tests remain in the passing suite.
 
 ## Data-source limitations
 

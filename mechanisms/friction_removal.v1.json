@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "mechanism_id": "friction_removal",
+  "version": 1,
+  "name": "Friction Removal",
+  "status": "hypothesis",
+  "causal_claim": "For recurring household organization failures, precise fit guidance and a maintainable low-complexity system can create value by removing decisions and rework rather than by selling more storage capacity.",
+  "why_it_might_work": [
+    "Household organization problems are broad, recurring, and tied to finding items, reducing clutter, time, motivation, and storage constraints.",
+    "Dimensions, visibility, interoperability, and routine maintenance create observable decision criteria.",
+    "Compact nonregulated goods can support lean fulfillment and no-inventory validation."
+  ],
+  "supporting_evidence": [
+    {
+      "evidence_id": "fr_yougov_pain",
+      "proposition": "A 2025 YouGov poll found insufficient storage, excess belongings, difficulty letting go, motivation, time, and not knowing where to start among reported organization challenges.",
+      "source_reference": "https://ygo-assets-websites-editorial-emea.yougov.net/documents/Home_Organization_poll_results.pdf",
+      "provenance": "Observed",
+      "confidence": "High",
+      "interpretation_limit": "The poll establishes self-reported pain, not purchase intent or product economics."
+    },
+    {
+      "evidence_id": "fr_yougov_behavior",
+      "proposition": "The same poll reports broad use of bins, shelving, hooks, and drawer dividers, demonstrating existing solution behavior.",
+      "source_reference": "https://ygo-assets-websites-editorial-emea.yougov.net/documents/Home_Organization_poll_results.pdf",
+      "provenance": "Observed",
+      "confidence": "High",
+      "interpretation_limit": "Use of current solutions does not show dissatisfaction or willingness to switch."
+    }
+  ],
+  "contradicting_evidence": [
+    {
+      "evidence_id": "fr_behavior_root",
+      "proposition": "Many organization failures may arise from possession volume, motivation, or household behavior rather than a missing product.",
+      "source_reference": "https://ygo-assets-websites-editorial-emea.yougov.net/documents/Home_Organization_poll_results.pdf",
+      "provenance": "Observed",
+      "confidence": "High",
+      "interpretation_limit": "The poll does not identify which respondents would benefit from a physical solution."
+    },
+    {
+      "evidence_id": "fr_commodity_risk",
+      "proposition": "High supplier availability may make physical organization products easy to copy and difficult to differentiate profitably.",
+      "source_reference": "research/SPRINT_001_GREAT_ELIMINATION.md",
+      "provenance": "Hypothesis",
+      "confidence": "Medium",
+      "interpretation_limit": "No supplier, price, contribution-margin, or return-rate sample has been collected."
+    }
+  ],
+  "required_conditions": [
+    "One recurring friction must transfer across multiple room or life-stage contexts.",
+    "The mechanism must reduce decisions, time, or rework rather than only add capacity.",
+    "Fit can be verified through measurements and clear self-service constraints.",
+    "A compact, nonfragile, noncustom solution space exists with low support burden."
+  ],
+  "failure_conditions": [
+    "The root problem is accumulation or motivation and a product merely relocates clutter.",
+    "Each useful solution requires custom dimensions or installation.",
+    "Customers accept fit failures because commodity prices are too low to support guidance.",
+    "The dominant solutions are bulky enough that shipping and returns destroy the economics."
+  ],
+  "falsification_experiment": {
+    "experiment_id": "ofp_fr_evidence_001",
+    "question": "Does a recurring, measurable household friction exist that fit certainty and a maintainable system can resolve across contexts?",
+    "hypothesis": "The same fit, access, visibility, or maintenance failure appears in authorized reviews and actual household workarounds across multiple room types.",
+    "null_hypothesis": "Organization failures are primarily behavioral or context-specific, leaving no transferable low-complexity commercial mechanism.",
+    "evidence_sources": [
+      "At least 100 authorized or user-provided reviews across closet, drawer or cabinet, and general storage contexts and at least two sources.",
+      "Five structured household interviews with photographs or measurements supplied only with participant permission."
+    ],
+    "sampling_plan": [
+      "Remove duplicates and preserve dimensions, context, claimed capacity, rating, and source where available.",
+      "Predeclare fit, access, visibility, durability, assembly, maintenance, and excess-capacity themes.",
+      "Ask households to demonstrate the current workaround and last failed attempt before discussing solutions."
+    ],
+    "survival_criteria": [
+      "At least one actionable theme appears in 15 or more nonduplicate reviews, across all three contexts and both sources.",
+      "At least three of five households independently demonstrate the same friction in an actual current workaround.",
+      "The problem can be specified with self-service measurements and does not require custom installation."
+    ],
+    "falsification_criteria": [
+      "No friction transfers across evidence sources and room contexts.",
+      "Observed failures are principally excess possessions or motivation rather than a solvable system defect.",
+      "Useful resolution requires custom sizing, bulky fulfillment, or ongoing human design service."
+    ],
+    "known_confounders": [
+      "Before-and-after enthusiasm may fade after the observation period.",
+      "Review samples may overrepresent poor measurement and assembly errors.",
+      "A visually satisfying concept may not improve long-term maintenance behavior."
+    ],
+    "validation_cost_ceiling_usd": "25.00",
+    "prohibited_actions": [
+      "No scraping, advertising, inventory, supplier outreach, home entry, or collection of unnecessary personal images."
+    ],
+    "next_decision": "Reject the mechanism or advance one cross-context friction to a no-inventory fit-and-choice test."
+  },
+  "confidence": "Medium",
+  "confidence_rationale": "Broad consumer pain and existing solution use are observed, but product-level dissatisfaction, willingness to pay, and maintainability remain untested.",
+  "transferability": {
+    "status": "unknown",
+    "boundary_conditions": [
+      "The first instance excludes custom installations, furniture, fragile goods, and bulky rigid storage."
+    ],
+    "next_replication_test": "After one instance passes, repeat the same friction-removal mechanism in a distinct household workflow with new participants."
+  },
+  "instruction_status": "not_earned",
+  "current_instruction": null,
+  "decision_owner": "Founder",
+  "last_updated": "2026-07-14"
+}

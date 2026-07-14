@@ -61,3 +61,7 @@ Append-only interpretation header with review, sequential version, method, class
 ## review_theme_assignments
 
 One theme/subtheme per classification version with confidence, matched evidence or phrase, classification source, human-confirmation status, and notes. Themes reference the maintainable application taxonomy.
+
+## mechanism cards (file-backed v1)
+
+JSON records under `mechanisms/`, versioned by Git rather than stored in the application database. Each card contains a causal claim, support and contradiction, required and failure conditions, a preregistered falsification experiment, budget ceiling, confidence rationale, transferability assessment, and instruction state. The validator prohibits an earned instruction until the card has `validated_play` status and replicated transferability.

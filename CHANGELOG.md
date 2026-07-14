@@ -4,6 +4,13 @@ All notable changes follow Keep a Changelog conventions.
 
 ## [Unreleased]
 
+### Operation First Principle
+
+- Added three versioned commercial Mechanism Cards without adding a page or database table.
+- Added strict validation for causal claims, contradictory evidence, null hypotheses, falsification gates, confounders, budgets, transferability, and earned-instruction integrity.
+- Added Sprint 002's scientific collection protocol and finalist evidence plan.
+- Added a CLI validator and business-rule tests for mechanism cards and the aggregate $75 ceiling.
+
 ### Work Order 003
 
 - Added immutable review import batches and protected original review records.

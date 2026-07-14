@@ -16,6 +16,8 @@ Work Order 002 adds immutable `ProductVersion` and `ResearchEntry` streams. The 
 
 Work Order 003 adds immutable `ReviewImportBatch` records, protected original `ReviewRecord` content, append-only `ReviewClassificationVersion` records, and theme assignments. File bytes are parsed in memory and discarded after preview/commit; SHA-256 hashes and immutable metadata remain. `ReviewClassifier` separates deterministic rules from future authorized classifiers. Analytics and reports read only active classification versions while retaining every prior interpretation.
 
+Operation First Principle adds no UI or database table. Commercial mechanisms begin as Git-versioned JSON cards validated by Pydantic. This keeps the first three hypotheses cheap and reviewable while enforcing supporting and contradicting evidence, null hypotheses, preregistered gates, confounders, spending ceilings, boundary conditions, and replication before an instruction can be earned. Database persistence is deferred until file storage blocks a real experiment.
+
 ## Reliability and auditability
 
 Evidence, scores, and status changes are historical records. Business mutations and their audit events share a transaction. SQLite foreign keys are enabled. Pydantic rejects malformed intake; service functions reject invalid ranges and impossible negative inputs. UI exceptions are logged, rolled back, and shown without pretending the operation succeeded.
