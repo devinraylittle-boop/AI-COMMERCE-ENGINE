@@ -30,6 +30,10 @@ All notable changes follow Keep a Changelog conventions.
 - Completed Home Organization Behavioral Signal Sprint v0.1 using 34 lawful public-source observations across ten narrow areas without interviews, synthetic evidence, public outreach, or new software.
 - Selected under-sink fit uncertainty as the leading test candidate; retained pantry containment and closet compatibility; preregistered disposable test claims, consequential behaviors, $25 ceilings, and kill signals.
 - Kept six ranking dimensions separate and named refrigerator aesthetics, toy storage, and garage systems as dangerous false positives rather than collapsing evidence into an overall score.
+- Reset Company 001 from discovery-engine validation to a focused three-to-five-product ecommerce storefront.
+- Added The Founding Five with three launch candidates, two reserves, individual honest recommendation briefs, quality tests, sourcing gates, and contribution-margin requirements.
+- Added a read-only sourcing shortlist with at least two candidate B2B paths per launch product, a common twelve-question inquiry, contact order, and automatic rejection conditions.
+- Deferred cross-domain tournaments and all laboratory work that does not directly increase the probability of a profitable storefront launch.
 - Marked Learning ROI observation-only until several completed experiments expose its behavior and gaming risks.
 
 ### Work Order 003

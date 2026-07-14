@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Company 001 — Home Organization behavioral evidence. Interviews are no longer a dependency. A bounded public-source desk sprint compared ten narrow problem areas and selected under-sink fit uncertainty as the best candidate for a separately authorized first commercial exposure, with pantry consequence-triggered containment and closet compatibility as reserves. All public outreach and commercial exposure remain frozen. The result is a test-priority decision—not proof of demand, profitability, product need, or mechanism viability. No product test, community contact, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
+Company 001 — focused storefront execution. The mission is to build a small, profitable ecommerce business that teaches ACE something every week. The Founding Five has been reduced to a coherent three-product launch path—Tool-Free Adjustable Under-Sink Caddy, Pull-Out Pantry Caddy, and Expandable Drawer Organizer—with No-Drill Shower Caddy and Whole-Bag Airtight Pantry Starter Set held in reserve. These are product specifications, not selected suppliers or approved inventory. The next bottleneck is real sourcing economics and sample quality, not more market architecture. No purchase, supplier contact, storefront publication, payment collection, or advertising spend is yet authorized.
 
 ## Completed work
 
@@ -37,6 +37,7 @@ Company 001 — Home Organization behavioral evidence. Interviews are no longer 
 - Added 20 synthetic open-training cases and provisional answers, explicit uncertainty, safety escalation, and gates that forbid product prescription.
 - Corrected the calibration governance after recognizing that public reference exposure prevents a blind test: separated open training from formal calibration; defined Case Steward, Packet Custodian, Coder A/B, Arbiter, and Mechanism Owner roles; excluded prior designers and reference viewers from coder roles; and added eligibility, custody, anonymization, arbitration, and fresh-AI controls.
 - Completed a manual Home Organization Behavioral Signal Sprint across pantry, garage, under-sink, closet, refrigerator, bathroom, laundry, small-apartment, toy, and RV contexts; preserved 34 source-grounded observations; ranked six dimensions separately; selected three finalists; and identified refrigerator aesthetics, toy storage, and garage systems as the most dangerous current false positives.
+- Reset Company 001 around a three-to-five-product storefront; created the Founding Five recommendation set, selected a coherent three-product kitchen/utility launch trio, defined two reserves, documented one honest recommendation page per product, and set sourcing, sample, shipping, claim, and contribution-margin gates.
 - Placed Learning ROI in observation-only status until multiple experiments reveal how the metric behaves and can be gamed.
 
 ## Current architecture
@@ -56,11 +57,13 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Keep all public outreach frozen.
-2. Review the Behavioral Signal Sprint's observation/inference boundaries and decide whether under-sink fit earns one external commercial exposure.
-3. Before any exposure, obtain a durable trend/ad snapshot, a systematically sampled authorized review corpus, supplier/fulfillment estimates, and a legal check on refundable-reservation language.
-4. If exposure is authorized, freeze the under-sink claim and run only the disposable $25-or-100-qualified-visit test; do not build reusable architecture.
-5. Keep diagnostic calibration pending until eligible external roles and an unseen sealed case packet exist; neither the founder nor participating Codex architect may serve as an independent coder.
+1. Obtain founder authorization to contact YouCopia wholesale, Joseph Joseph trade, the named Faire wholesalers, and DEKAVA using the fixed sourcing inquiry; commit no funds.
+2. Compare written pricing, MOQ, location, lead time, packaging, materials, claims, defect/replacement terms, channel restrictions, and estimated landed cost.
+3. Request founder approval for no more than two samples per candidate only after the quote comparison eliminates weak paths.
+4. Test samples against the published product briefs and reject any SKU that misses quality, fit, shipping, or contribution-margin gates.
+5. Build and publish the minimal storefront only after one approved SKU exists for each launch product and real product data can replace hypotheses.
+
+All laboratory expansion, cross-domain tournaments, diagnostic calibration, behavioral modeling, dashboards, and reusable discovery architecture move to the backlog unless they directly remove a launch blocker.
 
 No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 
