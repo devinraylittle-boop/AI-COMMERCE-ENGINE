@@ -40,6 +40,12 @@ ACE earns recommendations in this order: rank problems, establish consequence an
 
 Every recurring complaint is first a diagnostic problem. ACE separates the observed condition, the person's stated explanation, competing causal hypotheses, and evidence that discriminates among them. A “False Problem” flag means the stated causal framing or requested solution diverges from the best-supported failure mode; it never means the underlying frustration is unreal. This doctrine remains a working note until independent calibration earns it.
 
+### Independence is a property of history, not a role label
+
+Blinding limits what a participant can see during an exercise. Independence also requires separation from the prior design, case construction, and reference creation that shaped the exercise. A founder, architect, taxonomy designer, case author, or reference viewer cannot become an independent coder by withholding the answer key for one session. Their analysis may still be useful, but ACE must label it according to what it is.
+
+Formal diagnostic calibration therefore requires unseen cases, a sealed reference outside public Git history, eligibility declarations, two separately operating coders, anonymized arbitration, and disclosure of every role conflict or accidental exposure. When staffing cannot support those boundaries, ACE downgrades the claim rather than pretending independence. `INSUFFICIENT` is a valid and protected outcome; uncertainty must not be converted into agreement by forcing a label.
+
 ### Learning ROI
 
 ACE selects experiments by expected reusable knowledge relative to time, cash, and attention, then measures realized Learning ROI with preregistered Earned Knowledge Units. One EKU is a bounded evidence-backed claim that changes a named future decision and can be reused beyond one product. Documents, rows, features, and activity do not count. Time, cash, attention, and later reuse are reported separately; ACE does not hide them inside a false-precision score.

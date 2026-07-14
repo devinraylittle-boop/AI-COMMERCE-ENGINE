@@ -1,6 +1,6 @@
 # Home Organization Failure Mode Map v0.1
 
-**Status:** working diagnostic map; not an earned instruction, product taxonomy, or customer diagnosis
+**Status:** working diagnostic map; open-training examples exist, but formal independent calibration has not occurred; not an earned instruction, product taxonomy, or customer diagnosis
 
 **Working doctrine:** Every recurring complaint should first be treated as a diagnostic problem before it is treated as a commercial opportunity.
 

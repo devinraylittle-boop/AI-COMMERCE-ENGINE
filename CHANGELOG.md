@@ -23,7 +23,10 @@ All notable changes follow Keep a Changelog conventions.
 - Defined Earned Knowledge Units and separate time, cash, attention, and reuse measures instead of a false-precision Learning Score.
 - Added Home Organization Failure Mode Map v0.1 and Diagnose Before Prescribing as a working, unearned research doctrine.
 - Added False Problem as an evidence-dependent overlay separating reported cause from best-supported failure mode.
-- Added a 20-case synthetic diagnostic calibration exercise, provisional reference, uncertainty rules, hazard boundaries, and internal release gates without software or public outreach.
+- Added 20 synthetic diagnostic cases, provisional answers, uncertainty rules, hazard boundaries, and internal release gates without software or public outreach.
+- Reclassified the committed synthetic cases and answers as open training material because a public answer key cannot support a blind calibration.
+- Added formal calibration governance separating Case Steward, Packet Custodian, two independent coders, anonymized Arbiter, and Mechanism Owner; added role declarations, sealed-reference custody, fresh-AI eligibility, and an uncertainty-first coder sheet.
+- Explicitly excluded the founder and participating Codex architect from independent-coder roles due to prior method involvement and reference exposure.
 - Marked Learning ROI observation-only until several completed experiments expose its behavior and gaming risks.
 
 ### Work Order 003

@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Company 001 — Home Organization diagnostic calibration. All public outreach remains frozen. Comparative selection advanced Home Organization only to an internal diagnostic exercise. ACE now has a working Failure Mode Map, a False Problem overlay, a synthetic calibration packet, provisional reference classifications, hazard boundaries, and release gates. Diagnose Before Prescribing is a working doctrine—not an earned instruction. No product test, community contact, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
+Company 001 — Home Organization diagnostic calibration governance. All public outreach remains frozen. ACE has a working Failure Mode Map, a False Problem overlay, hazard boundaries, and open synthetic training examples. Because their reference was committed to public Git history, those examples are not a blind calibration and satisfy no formal release gate. The founder and participating Codex architect are ineligible as independent coders because both helped shape the method and the architect has seen the reference. Diagnose Before Prescribing remains a working doctrine—not an earned instruction. No product test, community contact, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
 
 ## Completed work
 
@@ -34,7 +34,8 @@ Company 001 — Home Organization diagnostic calibration. All public outreach re
 - Completed Comparative Laboratory Selection 001 using the same seven claim slots and an ordinal dominance comparison; advanced Home Organization, reserved Coffee, and deferred Dogs with explicit reversal conditions.
 - Defined Learning ROI through preregistered Earned Knowledge Units per time, cash, and attention, plus later reuse yield; added the first ledger without inventing a scalar learning score.
 - Added Home Organization Failure Mode Map v0.1 covering volume/inflow, system design, maintenance, household governance, time/context, product failure, hazards, human access, definition mismatch, and False Problem as an evidence-dependent overlay.
-- Added a 20-case synthetic diagnostic calibration packet, provisional reference classifications, explicit uncertainty, safety escalation, and gates that forbid product prescription and false claims of independent agreement.
+- Added 20 synthetic open-training cases and provisional answers, explicit uncertainty, safety escalation, and gates that forbid product prescription.
+- Corrected the calibration governance after recognizing that public reference exposure prevents a blind test: separated open training from formal calibration; defined Case Steward, Packet Custodian, Coder A/B, Arbiter, and Mechanism Owner roles; excluded prior designers and reference viewers from coder roles; and added eligibility, custody, anonymization, arbitration, and fresh-AI controls.
 - Placed Learning ROI in observation-only status until multiple experiments reveal how the metric behaves and can be gamed.
 
 ## Current architecture
@@ -55,10 +56,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 ## Immediate next actions
 
 1. Keep all public outreach frozen.
-2. Have one coder complete `DIAGNOSTIC_CALIBRATION_CASES_v0.1.csv` without reading the reference file.
-3. Compare with the provisional reference, document disagreements, and revise only ambiguous definitions—not outcomes.
-4. Have a genuinely independent second coder repeat the exercise; do not substitute same-person repetition for inter-rater agreement.
-5. If the synthetic release gates pass, qualify six existing lawful sources and draw a 20-episode de-identified real-evidence calibration sample before considering public permission-seeking.
+2. Appoint an eligible Case Steward and Packet Custodian; neither the founder nor participating Codex architect may serve as an independent coder.
+3. Create a new formal case packet and provisional reference outside the public repository, record artifact hashes, and seal the reference until judgments are locked.
+4. Recruit Coder A and Coder B, collect eligibility declarations, and distribute only the frozen map, coder instructions, and unseen cases.
+5. Measure agreement before anonymized arbitration; send only disputes that survive arbitration to the Mechanism Owner.
+6. If every formal synthetic gate passes without a custody or independence violation, qualify six lawful sources and draw a de-identified real-evidence calibration sample before considering public permission-seeking.
 
 No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 
