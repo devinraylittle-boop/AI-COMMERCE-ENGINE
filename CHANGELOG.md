@@ -13,6 +13,7 @@ All notable changes follow Keep a Changelog conventions.
 - Renamed Sprint 002 to Reality Check and added the reusable Evidence Supply Chain across behavioral, language, market, expert, and operational evidence.
 - Added source-qualification and interview-debrief records plus two training-only pilot interviews before formal mechanism collection.
 - Documented mechanisms as families of causal claims, ACE's scientific sequence, a future claim-blinding direction, and the evidence-first architecture purchase rule without changing software or card schemas.
+- Added Consumer Behavior Intelligence v0.1 as research-only doctrine: operational decision states, bounded predictions, ethical interventions, minimal-data governance, causal evaluation, candidate-context applications, and ten falsifiable behavioral hypotheses.
 
 ### Work Order 003
 

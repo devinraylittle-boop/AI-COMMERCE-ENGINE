@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Operation First Principle - Reality Check for Company 001. The compliant review-mining foundation is complete; the active bottleneck is a repeatable Evidence Supply Chain spanning observed behavior, customer language, market behavior, expert knowledge, and operational evidence. No Mission Control or additional feature page is authorized.
+Operation First Principle - Reality Check for Company 001. The compliant review-mining foundation is complete. ACE now has a versioned Consumer Behavior Intelligence research program that defines operational decision states, ethical interventions, minimal-data prediction targets, and ten falsifiable behavioral hypotheses. No behavioral-profile architecture, Mission Control, or additional feature page is authorized.
 
 ## Completed work
 
@@ -26,6 +26,7 @@ Operation First Principle - Reality Check for Company 001. The compliant review-
 - Operation First Principle collection protocol, preregistered falsification gates, interview script, and $75 aggregate research ceiling.
 - Evidence Supply Chain operating model with five complementary evidence classes, source qualification, collection cadence, mechanism-specific supply maps, release gates, and reusable source/interview records.
 - Working causal-claim doctrine and future claim-blinding direction, intentionally documented without changing Mechanism Cards or adding architecture.
+- Consumer Behavior Intelligence v0.1: research synthesis, decision journey, trigger/barrier taxonomy, signal-to-state uncertainty map, causal measurement roadmap, privacy limits, three candidate-context applications, and ten prioritized working hypotheses.
 
 ## Current architecture
 
@@ -44,11 +45,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Conduct two `training_only` Friction Removal pilot interviews using `research/INTERVIEW_PROTOCOL.v0.1.md` and complete `research/templates/INTERVIEW_DEBRIEF.md` after each.
-2. Freeze Interview Protocol v1 after correcting questions, timing, neutrality, and note discipline exposed by the pilots.
-3. Register and qualify candidate Classes A-E sources with `research/templates/EVIDENCE_SOURCE_RECORD.md`.
-4. Recruit formal recent-behavior interviewees and dry-run one authorized review import.
-5. Collect evidence against the unchanged Mechanism Cards; no advertising, inventory, or supplier outreach.
+1. Convert the first concrete Company 001 offer into test materials for behavioral hypotheses 1-4: total-cost transparency, fit/compatibility, “who should not buy,” and balanced review themes.
+2. Use small comprehension/usability tests only to debug those materials; do not count stated intention as demand.
+3. Define instrumentation for purchase, cancellation, return, contribution, support, and opt-out before any live randomized test.
+4. Register and qualify recurring Classes A-E sources with `research/templates/EVIDENCE_SOURCE_RECORD.md`.
+5. Run the cheapest real behavioral experiment that can reject one hypothesis, then wait through the relevant return window.
 
 No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 
