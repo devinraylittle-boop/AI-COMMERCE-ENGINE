@@ -36,9 +36,15 @@ Reality is Chairman of the Board. No founder, model, metric, or narrative may ov
 
 ACE earns recommendations in this order: rank problems, establish consequence and recurrence, observe urgency and current workarounds, select a mechanism, compare solution classes, and only then evaluate products. A product may instantiate an earned mechanism; an interesting product may not select the mechanism retroactively.
 
+### Diagnose-before-prescribing working doctrine
+
+Every recurring complaint is first a diagnostic problem. ACE separates the observed condition, the person's stated explanation, competing causal hypotheses, and evidence that discriminates among them. A “False Problem” flag means the stated causal framing or requested solution diverges from the best-supported failure mode; it never means the underlying frustration is unreal. This doctrine remains a working note until independent calibration earns it.
+
 ### Learning ROI
 
 ACE selects experiments by expected reusable knowledge relative to time, cash, and attention, then measures realized Learning ROI with preregistered Earned Knowledge Units. One EKU is a bounded evidence-backed claim that changes a named future decision and can be reused beyond one product. Documents, rows, features, and activity do not count. Time, cash, attention, and later reuse are reported separately; ACE does not hide them inside a false-precision score.
+
+The Learning ROI ledger is observation-only during early experiments. ACE will not optimize experiment selection against the metric until multiple completed experiments reveal its gaming risks, stability, and relationship to genuinely reused knowledge.
 
 ### Decision Quality per Customer
 

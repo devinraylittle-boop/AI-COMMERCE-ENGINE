@@ -21,6 +21,10 @@ All notable changes follow Keep a Changelog conventions.
 - Froze all public outreach and moved the coffee-specific Problem Discovery protocol into reserve.
 - Added Comparative Laboratory Selection 001 across Dogs, Coffee, and Home Organization; selected Home Organization for the next full discovery cycle using ordinal Learning ROI dominance with explicit reversal conditions.
 - Defined Earned Knowledge Units and separate time, cash, attention, and reuse measures instead of a false-precision Learning Score.
+- Added Home Organization Failure Mode Map v0.1 and Diagnose Before Prescribing as a working, unearned research doctrine.
+- Added False Problem as an evidence-dependent overlay separating reported cause from best-supported failure mode.
+- Added a 20-case synthetic diagnostic calibration exercise, provisional reference, uncertainty rules, hazard boundaries, and internal release gates without software or public outreach.
+- Marked Learning ROI observation-only until several completed experiments expose its behavior and gaming risks.
 
 ### Work Order 003
 

@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Company 001 — Comparative Laboratory Selection 001 complete. All public outreach is frozen. A symmetric internal desk cycle compared Dogs / Trust-Mediated Care, Coffee / Expertise Ladder, and Home Organization / Friction Removal by expected Learning ROI. Home Organization advances to the first full Problem Discovery cycle; Coffee remains first reserve and Dogs is deferred. This selects a learning laboratory only—not a market, validated mechanism, problem, solution, product, or offer. No product test, community contact, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
+Company 001 — Home Organization diagnostic calibration. All public outreach remains frozen. Comparative selection advanced Home Organization only to an internal diagnostic exercise. ACE now has a working Failure Mode Map, a False Problem overlay, a synthetic calibration packet, provisional reference classifications, hazard boundaries, and release gates. Diagnose Before Prescribing is a working doctrine—not an earned instruction. No product test, community contact, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
 
 ## Completed work
 
@@ -33,6 +33,9 @@ Company 001 — Comparative Laboratory Selection 001 complete. All public outrea
 - Froze public outreach and preserved the coffee-specific Problem Discovery protocol as a reserve rather than an active experiment.
 - Completed Comparative Laboratory Selection 001 using the same seven claim slots and an ordinal dominance comparison; advanced Home Organization, reserved Coffee, and deferred Dogs with explicit reversal conditions.
 - Defined Learning ROI through preregistered Earned Knowledge Units per time, cash, and attention, plus later reuse yield; added the first ledger without inventing a scalar learning score.
+- Added Home Organization Failure Mode Map v0.1 covering volume/inflow, system design, maintenance, household governance, time/context, product failure, hazards, human access, definition mismatch, and False Problem as an evidence-dependent overlay.
+- Added a 20-case synthetic diagnostic calibration packet, provisional reference classifications, explicit uncertainty, safety escalation, and gates that forbid product prescription and false claims of independent agreement.
+- Placed Learning ROI in observation-only status until multiple experiments reveal how the metric behaves and can be gamed.
 
 ## Current architecture
 
@@ -52,10 +55,10 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 ## Immediate next actions
 
 1. Keep all public outreach frozen.
-2. Adapt the common Problem Discovery fields to Home Organization without naming products or assuming Friction Removal is correct.
-3. Predeclare room/context boundaries and exclude mold, pests, structural installation, hoarding disorder, and other cases requiring qualified professional help.
-4. Qualify two existing customer-language sources, the YouGov market source, two expert/guide sources, and one product-failure source before extraction.
-5. Collect and audit a small internal calibration sample; authorize later public permission-seeking only if coding can distinguish possessions/motivation, routine, fit/access, durability, and environmental failure reliably.
+2. Have one coder complete `DIAGNOSTIC_CALIBRATION_CASES_v0.1.csv` without reading the reference file.
+3. Compare with the provisional reference, document disagreements, and revise only ambiguous definitions—not outcomes.
+4. Have a genuinely independent second coder repeat the exercise; do not substitute same-person repetition for inter-rater agreement.
+5. If the synthetic release gates pass, qualify six existing lawful sources and draw a 20-episode de-identified real-evidence calibration sample before considering public permission-seeking.
 
 No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 
