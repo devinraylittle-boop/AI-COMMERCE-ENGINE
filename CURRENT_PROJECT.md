@@ -25,6 +25,7 @@ Operation First Principle - Reality Check for Company 001. The compliant review-
 - Three machine-readable Mechanism Cards for Trust-Mediated Care, Expertise Ladder, and Friction Removal, with validation that prevents premature earned instructions.
 - Operation First Principle collection protocol, preregistered falsification gates, interview script, and $75 aggregate research ceiling.
 - Evidence Supply Chain operating model with five complementary evidence classes, source qualification, collection cadence, mechanism-specific supply maps, release gates, and reusable source/interview records.
+- Working causal-claim doctrine and future claim-blinding direction, intentionally documented without changing Mechanism Cards or adding architecture.
 
 ## Current architecture
 
@@ -48,6 +49,8 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 3. Register and qualify candidate Classes A-E sources with `research/templates/EVIDENCE_SOURCE_RECORD.md`.
 4. Recruit formal recent-behavior interviewees and dry-run one authorized review import.
 5. Collect evidence against the unchanged Mechanism Cards; no advertising, inventory, or supplier outreach.
+
+No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 
 ## Commands
 

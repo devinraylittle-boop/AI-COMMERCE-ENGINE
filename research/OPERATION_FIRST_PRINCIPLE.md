@@ -8,6 +8,8 @@
 
 ACE is a business laboratory. Every implementation must make experiments cheaper, conclusions more reliable, or future decisions better. A mechanism is not a product category and a successful product is not automatically a reusable play.
 
+A mechanism is also not one indivisible hypothesis. It may contain several causal claims with different evidence and outcomes. This refinement is documented in `research/CAUSAL_CLAIMS_WORKING_NOTE.md`; it does not change the current cards or authorize Claim Card architecture.
+
 The evidence ladder is:
 
 1. **Hypothesis** — a falsifiable causal claim with contradictory evidence and a preregistered test.
@@ -15,6 +17,8 @@ The evidence ladder is:
 3. **Validated instance** — the mechanism survived one commercial test under stated conditions.
 4. **Validated play** — the causal mechanism survived an independent replication in a materially different context.
 5. **Earned instruction** — a validated play can be expressed as a bounded, reusable instruction.
+
+The research sequence is Question -> Causal Claim -> Evidence Plan -> Experiment -> Observation -> Replication -> Instruction. Assumptions and researcher judgment are documented but never labeled as observations.
 
 `Rejected` means the current hypothesis failed. `Anti-play` requires repeated failure under identifiable conditions. Neither is a bad outcome; both protect capital and improve future decisions.
 

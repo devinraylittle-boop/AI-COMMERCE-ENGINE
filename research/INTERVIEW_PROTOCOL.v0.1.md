@@ -4,6 +4,8 @@
 **Permitted use:** two Friction Removal pilot interviews  
 **Prohibited use:** mechanism gates, market prevalence, product selection, or commercial claims
 
+This calibration draft is not claim-blind because the current operator already knows the project context. Formal Interview Protocol v1 should expose only behavioral eligibility and neutral questions to the interviewer when a separate interviewer is available. Do not pretend blinding occurred when one person performs multiple roles.
+
 ## Calibration objective
 
 Determine whether the interview method produces traceable accounts of recent behavior without leading participants toward ACE's Friction Removal hypothesis.

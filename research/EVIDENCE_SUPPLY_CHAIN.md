@@ -26,6 +26,8 @@ Decision question
 
 Every arrow is a failure point. ACE records failures instead of silently repairing them.
 
+Mechanisms organize commercial theories; causal claims are the units that experiments can support or reject. The current distinction and future claim-blinding direction are recorded in `research/CAUSAL_CLAIMS_WORKING_NOTE.md`. No Claim Card implementation is authorized.
+
 ## Evidence classes
 
 The letters identify evidence types; they are not quality grades. Class A behavior is often the best evidence of what somebody did, but it cannot by itself establish safety, causality, market size, or viable economics. A conclusion becomes stronger when independent classes converge.

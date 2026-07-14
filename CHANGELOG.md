@@ -12,6 +12,7 @@ All notable changes follow Keep a Changelog conventions.
 - Added a CLI validator and business-rule tests for mechanism cards and the aggregate $75 ceiling.
 - Renamed Sprint 002 to Reality Check and added the reusable Evidence Supply Chain across behavioral, language, market, expert, and operational evidence.
 - Added source-qualification and interview-debrief records plus two training-only pilot interviews before formal mechanism collection.
+- Documented mechanisms as families of causal claims, ACE's scientific sequence, a future claim-blinding direction, and the evidence-first architecture purchase rule without changing software or card schemas.
 
 ### Work Order 003
 
