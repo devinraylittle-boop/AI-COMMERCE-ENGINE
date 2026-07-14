@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Operation First Principle - Mechanism Verification for Company 001. The compliant review-mining foundation is complete; the active objective is to determine which of three commercial mechanisms deserves a first no-inventory behavior test. No Mission Control or additional feature page is authorized.
+Operation First Principle - Reality Check for Company 001. The compliant review-mining foundation is complete; the active bottleneck is a repeatable Evidence Supply Chain spanning observed behavior, customer language, market behavior, expert knowledge, and operational evidence. No Mission Control or additional feature page is authorized.
 
 ## Completed work
 
@@ -24,6 +24,7 @@ Operation First Principle - Mechanism Verification for Company 001. The complian
 - Sprint 001 market elimination with three finalist contexts and separate profit, learning, and automation rankings.
 - Three machine-readable Mechanism Cards for Trust-Mediated Care, Expertise Ladder, and Friction Removal, with validation that prevents premature earned instructions.
 - Operation First Principle collection protocol, preregistered falsification gates, interview script, and $75 aggregate research ceiling.
+- Evidence Supply Chain operating model with five complementary evidence classes, source qualification, collection cadence, mechanism-specific supply maps, release gates, and reusable source/interview records.
 
 ## Current architecture
 
@@ -42,11 +43,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Run `ai-commerce-mechanisms mechanisms --total-budget-ceiling 75` and preserve the unchanged v1 cards before real collection.
-2. Document two authorized review sources per mechanism; public visibility alone is not authorization.
-3. Recruit five recent-behavior interviewees per mechanism using `research/OPERATION_FIRST_PRINCIPLE.md`.
-4. Dry-run one small authorized import and verify provenance, duplicates, source distribution, and human-review queues.
-5. Collect evidence against the preregistered survival and falsification criteria; no advertising, inventory, or supplier outreach.
+1. Conduct two `training_only` Friction Removal pilot interviews using `research/INTERVIEW_PROTOCOL.v0.1.md` and complete `research/templates/INTERVIEW_DEBRIEF.md` after each.
+2. Freeze Interview Protocol v1 after correcting questions, timing, neutrality, and note discipline exposed by the pilots.
+3. Register and qualify candidate Classes A-E sources with `research/templates/EVIDENCE_SOURCE_RECORD.md`.
+4. Recruit formal recent-behavior interviewees and dry-run one authorized review import.
+5. Collect evidence against the unchanged Mechanism Cards; no advertising, inventory, or supplier outreach.
 
 ## Commands
 

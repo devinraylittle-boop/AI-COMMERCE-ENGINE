@@ -10,6 +10,8 @@ All notable changes follow Keep a Changelog conventions.
 - Added strict validation for causal claims, contradictory evidence, null hypotheses, falsification gates, confounders, budgets, transferability, and earned-instruction integrity.
 - Added Sprint 002's scientific collection protocol and finalist evidence plan.
 - Added a CLI validator and business-rule tests for mechanism cards and the aggregate $75 ceiling.
+- Renamed Sprint 002 to Reality Check and added the reusable Evidence Supply Chain across behavioral, language, market, expert, and operational evidence.
+- Added source-qualification and interview-debrief records plus two training-only pilot interviews before formal mechanism collection.
 
 ### Work Order 003
 

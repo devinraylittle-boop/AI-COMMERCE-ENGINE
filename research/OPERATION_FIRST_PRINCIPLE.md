@@ -1,7 +1,7 @@
 # Operation First Principle
 
 **Company 001 purpose:** write ACE's first reusable commercial instruction.  
-**Phase:** Mechanism Verification  
+**Phase:** Reality Check
 **Prime question:** How would we know?
 
 ## Scientific rule
@@ -40,7 +40,9 @@ ai-commerce-mechanisms mechanisms --total-budget-ceiling 75
 
 The full preregistration, boundary conditions, evidence, and rejection rules live in each card. Criteria may not be changed after evidence collection begins without creating a new card version and explaining why.
 
-## Sprint 002 collection protocol
+## Reality Check collection protocol
+
+All five evidence classes and their repeatable acquisition operations are defined in `research/EVIDENCE_SUPPLY_CHAIN.md`. Reviews and interviews are necessary inputs, not the entire evidence strategy.
 
 ### Stage 1 — authorization record
 
@@ -122,10 +124,12 @@ This sprint cannot produce a validated play or an earned instruction. It can onl
 
 ## Immediate human actions
 
-1. Identify two lawful review sources for each mechanism and document authorization before collection.
-2. Recruit five qualified interviewees per mechanism using the recent-behavior criterion.
-3. Import one small dry-run batch before collecting the full corpus; verify provenance and duplicate handling.
-4. Do not modify the cards once the first real review or interview is collected. If a flaw is found, stop and version the card first.
+1. Conduct two `training_only` Friction Removal pilot interviews and complete a separate debrief for each. They do not count as mechanism evidence.
+2. Freeze Interview Protocol v1 after the pilot debriefs.
+3. Register candidate sources across Classes A-E and qualify authorization before collection.
+4. Recruit the formal five qualified interviewees per mechanism using the recent-behavior criterion.
+5. Import one small dry-run batch before collecting the full corpus; verify provenance and duplicate handling.
+6. Do not modify the cards once the first formal review or interview is collected. If a flaw is found, stop and version the card first.
 
 ## Completion standard
 

@@ -352,7 +352,7 @@ Scores are decision judgments on a 0–10 scale, not forecasts. They are indepen
 - **Pickleball** has extraordinary participation growth, but the current thesis is driven more by market momentum than by a verified unmet problem.
 - **Van / RV Organization** has a credible installed base, but fragmented fit and installation increase validation and support costs.
 
-## Next experiment — Sprint 002: Finalist Evidence Pack
+## Next experiment — Reality Check: Finalist Evidence Supply
 
 Do not build a page. Do not choose a product. Collect comparable evidence for the three finalists.
 

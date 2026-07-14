@@ -2,6 +2,8 @@
 
 Status: preliminary architecture register; no live provider adapter is implemented.
 
+This file tracks possible technical providers. The operational source-qualification, trust, cadence, evidence-class, and retirement process is defined in `research/EVIDENCE_SUPPLY_CHAIN.md`. Listing a provider here does not qualify it for decision use.
+
 | Source | Signal | Access and authorization | Likely cost | Constraints and limitations | Recommended sequence |
 |---|---|---|---|---|---|
 | Manual entry | Any | Human records source, method, date, confidence, and provenance | No provider fee | Slow; transcription risk; source rights still apply | **1 — implemented through current evidence forms** |
