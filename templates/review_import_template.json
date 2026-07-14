@@ -1,0 +1,17 @@
+{
+  "reviews": [
+    {
+      "external_review_id": "EXAMPLE-001",
+      "rating": 5,
+      "rating_scale": 5,
+      "review_title": "Example title",
+      "original_review_body": "Replace this fictional template row with user-authorized review text",
+      "review_date": "2026-01-01",
+      "verified_purchase": true,
+      "helpful_vote_count": 0,
+      "geography": "US",
+      "language": "en",
+      "variant_sku": "EXAMPLE-SKU"
+    }
+  ]
+}

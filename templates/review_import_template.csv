@@ -1,0 +1,2 @@
+external_review_id,rating,rating_scale,review_title,original_review_body,review_date,verified_purchase,helpful_vote_count,geography,language,variant_sku
+EXAMPLE-001,5,5,Example title,Replace this fictional template row with user-authorized review text,2026-01-01,true,0,US,en,EXAMPLE-SKU

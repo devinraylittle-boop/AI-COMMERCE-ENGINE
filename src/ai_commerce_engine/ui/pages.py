@@ -15,6 +15,9 @@ from ai_commerce_engine.models import (
     Opportunity,
     Product,
     ProductVersion,
+    ReviewClassificationVersion,
+    ReviewImportBatch,
+    ReviewRecord,
     ScoreSnapshot,
     StatusHistory,
     SupplierOffer,
@@ -31,6 +34,7 @@ from ai_commerce_engine.schemas import (
     OpportunityCreate,
     ProductCreate,
     ProductEdit,
+    ReviewInput,
     StatusChange,
 )
 from ai_commerce_engine.services.audit import record_audit
@@ -53,6 +57,27 @@ from ai_commerce_engine.services.research import (
     latest_research_entries,
     save_research_entry,
 )
+from ai_commerce_engine.services.review_analytics import (
+    calculate_review_analytics,
+    reviews_requiring_attention,
+)
+from ai_commerce_engine.services.review_classification import (
+    correct_classification,
+    reclassify_scope,
+    restore_classification_version,
+)
+from ai_commerce_engine.services.review_imports import (
+    CANONICAL_FIELDS,
+    ImportPreview,
+    commit_import,
+    create_manual_review,
+    decide_duplicate,
+    parse_csv,
+    parse_json,
+    preview_rows,
+)
+from ai_commerce_engine.services.review_reports import export_review_report
+from ai_commerce_engine.services.review_taxonomy import THEME_TAXONOMY
 from ai_commerce_engine.services.scores import save_score
 from ai_commerce_engine.services.scoring import DEFAULT_WEIGHTS, PENALTY_FIELDS
 from ai_commerce_engine.services.settings import get_scoring_weights, save_scoring_weights
@@ -969,6 +994,528 @@ def recommendation_brief(session: Session) -> None:
     )
 
 
+def review_mining(session: Session) -> None:
+    page_header(
+        "Review Mining",
+        "Analyze user-authorized review samples without scraping or claiming market prevalence.",
+    )
+    product = _selected_product(session, "review_mining_product")
+    if not product:
+        return
+    tabs = st.tabs(
+        [
+            "Overview",
+            "Import reviews",
+            "Import batches",
+            "Review explorer",
+            "Duplicates",
+            "Classification review",
+            "Taxonomy",
+            "Report",
+        ]
+    )
+    with tabs[0]:
+        analytics = calculate_review_analytics(session, product_id=product.id)
+        metrics = st.columns(6)
+        metrics[0].metric("Imported", analytics.total_imported)
+        metrics[1].metric("Accepted", analytics.accepted_reviews)
+        metrics[2].metric("Duplicates", analytics.duplicate_count)
+        metrics[3].metric("Rejected", analytics.rejected_count)
+        metrics[4].metric("Classified", analytics.classified_count)
+        metrics[5].metric("Unclassified", analytics.unclassified_count)
+        st.caption(
+            "Theme percentage means the percentage of reviews in this imported sample "
+            "containing the theme. It is not market prevalence."
+        )
+        for warning in analytics.warnings:
+            st.warning(warning)
+        distributions = st.columns(3)
+        distributions[0].subheader("Sources")
+        distributions[0].write(analytics.source_distribution or "No reviews imported.")
+        distributions[1].subheader("Ratings")
+        distributions[1].write(analytics.rating_distribution or "No rating data.")
+        distributions[2].subheader("Verified purchase")
+        distributions[2].write(analytics.verified_purchase_distribution or "No data.")
+        if analytics.theme_counts:
+            st.dataframe(
+                [
+                    {
+                        "Theme": theme,
+                        "Count": count,
+                        "Imported-sample percentage": analytics.theme_percentages[theme],
+                    }
+                    for theme, count in analytics.theme_counts.items()
+                ],
+                hide_index=True,
+                use_container_width=True,
+            )
+            with st.expander("Theme counts by rating and source"):
+                st.write("By rating", analytics.theme_counts_by_rating)
+                st.write("By source", analytics.theme_counts_by_source)
+        st.write("Review-date distribution", analytics.review_date_distribution)
+        st.write("Fictional/non-fictional", analytics.fictional_distribution)
+        st.write("Classification versions", analytics.classification_version_distribution)
+        st.write("Human corrections", analytics.human_correction_count)
+
+    with tabs[1]:
+        manual, file_import = st.tabs(["Manual entry", "CSV / JSON"])
+        with manual, st.form("manual_review", clear_on_submit=True):
+            columns = st.columns(3)
+            source = columns[0].text_input("Source platform *")
+            rating = columns[1].number_input("Rating", min_value=0.0, value=None)
+            rating_scale = columns[2].number_input("Rating scale", min_value=0.1, value=5.0)
+            external_id = columns[0].text_input("External review ID")
+            reviewed = columns[1].date_input("Review date", value=None)
+            verified = columns[2].selectbox("Verified purchase", ["Unknown", "Yes", "No"])
+            title = st.text_input("Review title")
+            body = st.text_area("Original review body *", height=160)
+            provenance = st.selectbox(
+                "Provenance",
+                ["Manual entry", "User-provided", "Authorized export", "Fictional"],
+                help="How this review entered the system; this does not prove representativeness.",
+            )
+            fictional = st.checkbox("Clearly fictional demonstration review")
+            if st.form_submit_button("Save manual review", type="primary"):
+                try:
+                    created = create_manual_review(
+                        session,
+                        product_id=product.id,
+                        review=ReviewInput(
+                            external_review_id=external_id or None,
+                            source_platform=source,
+                            rating=Decimal(str(rating)) if rating is not None else None,
+                            rating_scale=Decimal(str(rating_scale)),
+                            review_title=title or None,
+                            original_review_body=body,
+                            review_date=reviewed,
+                            verified_purchase=(
+                                True if verified == "Yes" else False if verified == "No" else None
+                            ),
+                            provenance_type=provenance,
+                            is_fictional=fictional,
+                        ),
+                        actor="user",
+                    )
+                    session.commit()
+                    st.success(f"Review #{created.id} saved, checked, and classified.")
+                    st.rerun()
+                except (ValidationError, ValueError) as exc:
+                    session.rollback()
+                    st.error(str(exc))
+        with file_import:
+            st.info("Only user-authorized exports are supported. No source is fetched or scraped.")
+            template_columns = [
+                "external_review_id",
+                "rating",
+                "rating_scale",
+                "review_title",
+                "original_review_body",
+                "review_date",
+                "verified_purchase",
+                "helpful_vote_count",
+                "geography",
+                "language",
+                "variant_sku",
+            ]
+            template_row = {column: "" for column in template_columns}
+            downloads = st.columns(2)
+            downloads[0].download_button(
+                "CSV template",
+                pd.DataFrame([template_row]).to_csv(index=False),
+                "review-import-template.csv",
+                "text/csv",
+            )
+            downloads[1].download_button(
+                "JSON template",
+                pd.Series({"reviews": [template_row]}).to_json(),
+                "review-import-template.json",
+                "application/json",
+            )
+            uploaded = st.file_uploader("Authorized CSV or JSON", type=["csv", "json"])
+            if uploaded:
+                raw_content = uploaded.getvalue()
+                try:
+                    rows, source_hash = (
+                        parse_csv(raw_content, uploaded.name)
+                        if uploaded.name.lower().endswith(".csv")
+                        else parse_json(raw_content, uploaded.name)
+                    )
+                except (UnicodeDecodeError, ValueError, TypeError) as exc:
+                    st.error(f"Unable to preview file: {exc}")
+                    rows = []
+                    source_hash = ""
+                if rows:
+                    st.subheader("File preview")
+                    st.dataframe(rows[:20], hide_index=True, use_container_width=True)
+                    field_names = list(rows[0])
+                    source_platform = st.text_input("Source platform *", key="review_file_source")
+                    provenance = st.selectbox(
+                        "Provenance *",
+                        ["Authorized export", "User-provided", "Fictional"],
+                        key="review_file_provenance",
+                    )
+                    fictional = st.checkbox(
+                        "This entire import is fictional", key="review_file_fake"
+                    )
+                    st.subheader("Field mapping")
+                    mapping: dict[str, str] = {}
+                    options = ["", *field_names]
+                    for canonical in CANONICAL_FIELDS:
+                        if canonical in {"source_platform", "provenance_type", "is_fictional"}:
+                            continue
+                        default = options.index(canonical) if canonical in options else 0
+                        selected = st.selectbox(
+                            canonical.replace("_", " ").title(),
+                            options,
+                            index=default,
+                            key=f"review_map_{canonical}",
+                        )
+                        if isinstance(selected, str) and selected:
+                            mapping[canonical] = selected
+                    if st.button("Run dry-run validation", type="primary"):
+                        new_preview = preview_rows(
+                            rows,
+                            field_mapping=mapping,
+                            source_platform=source_platform,
+                            provenance_type=provenance,
+                            is_fictional=fictional,
+                            source_hash=source_hash,
+                            original_filename=uploaded.name,
+                        )
+                        st.session_state["review_import_preview"] = new_preview
+                        st.session_state["review_import_context"] = {
+                            "source_platform": source_platform,
+                            "provenance": provenance,
+                            "fictional": fictional,
+                            "method": "csv" if uploaded.name.lower().endswith(".csv") else "json",
+                        }
+                    stored_preview = st.session_state.get("review_import_preview")
+                    context = st.session_state.get("review_import_context")
+                    if (
+                        isinstance(stored_preview, ImportPreview)
+                        and stored_preview.source_hash == source_hash
+                        and isinstance(context, dict)
+                    ):
+                        st.write(
+                            {
+                                "submitted": len(stored_preview.rows),
+                                "valid": stored_preview.valid_count,
+                                "rejected": stored_preview.rejected_count,
+                                "file_hash": stored_preview.source_hash,
+                            }
+                        )
+                        errors = [
+                            {"Row": row.row_number, "Errors": "; ".join(row.errors)}
+                            for row in stored_preview.rows
+                            if row.errors
+                        ]
+                        if errors:
+                            st.dataframe(errors, hide_index=True, use_container_width=True)
+                        batch_name = st.text_input("Immutable batch name", value=uploaded.name)
+                        if st.button("Commit validated rows"):
+                            try:
+                                result = commit_import(
+                                    session,
+                                    product_id=product.id,
+                                    preview=stored_preview,
+                                    batch_name=batch_name,
+                                    source_type="review",
+                                    source_platform=context["source_platform"],
+                                    import_method=context["method"],
+                                    actor="user",
+                                    is_fictional=context["fictional"],
+                                )
+                                session.commit()
+                                del st.session_state["review_import_preview"]
+                                del st.session_state["review_import_context"]
+                                st.success(
+                                    f"Batch #{result.batch.id}: {len(result.reviews)} reviews "
+                                    f"stored; {len(result.errors)} rows rejected."
+                                )
+                                st.rerun()
+                            except ValueError as exc:
+                                session.rollback()
+                                st.error(str(exc))
+
+    with tabs[2]:
+        batches = list(
+            session.scalars(
+                select(ReviewImportBatch)
+                .where(ReviewImportBatch.product_id == product.id)
+                .order_by(ReviewImportBatch.created_at.desc())
+            )
+        )
+        st.dataframe(
+            [
+                {
+                    "ID": batch.id,
+                    "Name": batch.batch_name,
+                    "Method": batch.import_method,
+                    "Source": batch.source_platform,
+                    "Submitted": batch.record_count_submitted,
+                    "Accepted": batch.record_count_accepted,
+                    "Duplicates": batch.duplicate_count,
+                    "Rejected": batch.rejected_count,
+                    "Status": batch.import_status,
+                    "Fictional": batch.is_fictional,
+                    "Hash": batch.original_file_hash,
+                }
+                for batch in batches
+            ],
+            hide_index=True,
+            use_container_width=True,
+        )
+        if batches:
+            selected_batch_id = st.selectbox(
+                "Inspect batch analytics", [batch.id for batch in batches]
+            )
+            batch_analytics = calculate_review_analytics(session, batch_id=selected_batch_id)
+            st.write(
+                {
+                    "sample_size": batch_analytics.sample_size,
+                    "sources": batch_analytics.source_distribution,
+                    "ratings": batch_analytics.rating_distribution,
+                    "themes": batch_analytics.theme_counts,
+                }
+            )
+            for warning in batch_analytics.warnings:
+                st.warning(warning)
+
+    reviews = list(
+        session.scalars(
+            select(ReviewRecord)
+            .where(ReviewRecord.product_id == product.id)
+            .order_by(ReviewRecord.created_at.desc())
+        )
+    )
+    review_options: dict[str, int] = {}
+    for review in reviews:
+        fictional_label = "FICTIONAL · " if review.is_fictional else ""
+        label = (
+            f"#{review.id} · {review.source_platform} · {fictional_label}"
+            f"{review.original_review_body[:55]}"
+        )
+        review_options[label] = review.id
+    with tabs[3]:
+        if not review_options:
+            empty_state("No review records have been imported for this product.")
+        else:
+            selected = st.selectbox("Review", review_options, key="review_explorer")
+            selected_review = session.get(ReviewRecord, review_options[selected])
+            if selected_review:
+                if selected_review.is_fictional:
+                    st.warning("FICTIONAL demonstration record")
+                st.text_area(
+                    "Original immutable review text",
+                    selected_review.original_review_body,
+                    disabled=True,
+                )
+                st.write(
+                    {
+                        "source": selected_review.source_platform,
+                        "source_url": selected_review.source_url,
+                        "rating": selected_review.rating,
+                        "review_date": selected_review.review_date,
+                        "provenance": selected_review.provenance_type,
+                        "duplicate_status": selected_review.duplicate_status,
+                        "classification_version": selected_review.active_classification_version,
+                    }
+                )
+
+    with tabs[4]:
+        duplicates = [review for review in reviews if review.duplicate_status != "unique"]
+        if not duplicates:
+            empty_state("No duplicate candidates detected.")
+        else:
+            st.dataframe(
+                [
+                    {
+                        "Review": review.id,
+                        "Status": review.duplicate_status,
+                        "Canonical": review.duplicate_of_review_id,
+                        "Source": review.source_platform,
+                        "Text": review.original_review_body[:100],
+                    }
+                    for review in duplicates
+                ],
+                hide_index=True,
+                use_container_width=True,
+            )
+            with st.form("duplicate_decision"):
+                duplicate_id = st.selectbox(
+                    "Review to decide", [review.id for review in duplicates]
+                )
+                is_duplicate = st.radio(
+                    "Decision",
+                    [True, False],
+                    format_func=lambda value: (
+                        "Confirmed duplicate" if value else "Legitimate separate review"
+                    ),
+                )
+                canonical_id = st.number_input("Canonical review ID", min_value=1, value=None)
+                reason = st.text_area("Reason *")
+                if st.form_submit_button("Record duplicate decision"):
+                    try:
+                        decide_duplicate(
+                            session,
+                            duplicate_id,
+                            is_duplicate=is_duplicate,
+                            canonical_review_id=canonical_id,
+                            actor="user",
+                            reason=reason,
+                        )
+                        session.commit()
+                        st.success("Duplicate decision recorded in the audit log.")
+                        st.rerun()
+                    except ValueError as exc:
+                        session.rollback()
+                        st.error(str(exc))
+
+    with tabs[5]:
+        attention = reviews_requiring_attention(session, product.id)
+        st.write("Reviews requiring human attention", attention or "None")
+        if review_options:
+            selected = st.selectbox(
+                "Review to classify", review_options, key="classification_review"
+            )
+            selected_review = session.get(ReviewRecord, review_options[selected])
+            if selected_review:
+                st.text_area(
+                    "Original review",
+                    selected_review.original_review_body,
+                    disabled=True,
+                    key="classification_text",
+                )
+                versions = list(
+                    session.scalars(
+                        select(ReviewClassificationVersion)
+                        .where(ReviewClassificationVersion.review_id == selected_review.id)
+                        .order_by(ReviewClassificationVersion.version_number.desc())
+                    )
+                )
+                version_details = {
+                    version.version_number: [
+                        {
+                            "theme": item.theme,
+                            "confidence": item.confidence,
+                            "matched_evidence": item.matching_evidence,
+                            "source": item.classification_source,
+                        }
+                        for item in version.assignments
+                    ]
+                    for version in versions
+                }
+                st.write("Version comparison", version_details)
+                active_themes = [
+                    item["theme"]
+                    for item in version_details.get(
+                        selected_review.active_classification_version or 0, []
+                    )
+                ]
+                with st.form("human_classification"):
+                    themes = st.multiselect(
+                        "Active themes",
+                        list(THEME_TAXONOMY),
+                        default=active_themes,
+                        help=(
+                            "Saving creates a new version; it never edits the prior interpretation."
+                        ),
+                    )
+                    note = st.text_area("Supporting note")
+                    reason = st.text_input("Reason for correction *")
+                    if st.form_submit_button("Create corrected version"):
+                        try:
+                            correct_classification(
+                                session,
+                                selected_review,
+                                themes,
+                                actor="user",
+                                reason=reason,
+                                note=note or None,
+                            )
+                            session.commit()
+                            st.success("Corrected interpretation stored as a new version.")
+                            st.rerun()
+                        except ValueError as exc:
+                            session.rollback()
+                            st.error(str(exc))
+                with st.form("restore_classification"):
+                    version_number = st.selectbox(
+                        "Prior version to restore as a new version",
+                        [version.version_number for version in versions],
+                    )
+                    restore_reason = st.text_input("Restoration reason *")
+                    if st.form_submit_button("Restore interpretation"):
+                        try:
+                            restore_classification_version(
+                                session,
+                                selected_review,
+                                version_number,
+                                actor="user",
+                                reason=restore_reason,
+                            )
+                            session.commit()
+                            st.success("Prior interpretation restored as a new version.")
+                            st.rerun()
+                        except ValueError as exc:
+                            session.rollback()
+                            st.error(str(exc))
+                if st.button("Reclassify this product with current deterministic rules"):
+                    reclassify_scope(session, actor="user", product_id=product.id)
+                    session.commit()
+                    st.success("All product reviews received new classification versions.")
+                    st.rerun()
+
+    with tabs[6]:
+        st.dataframe(
+            [
+                {
+                    "Theme": item.name,
+                    "Definition": item.definition,
+                    "Examples": ", ".join(item.inclusion_examples),
+                    "Exclusions": ", ".join(item.exclusion_examples),
+                    "Priority": item.priority,
+                    "Severity": item.severity,
+                    "May affect": ", ".join(item.affects),
+                }
+                for item in THEME_TAXONOMY.values()
+            ],
+            hide_index=True,
+            use_container_width=True,
+        )
+
+    with tabs[7]:
+        report_scope = st.radio("Report scope", ["Product", "Import batch"], horizontal=True)
+        report_batch_id = None
+        if report_scope == "Import batch":
+            batch_ids = [
+                batch.id
+                for batch in session.scalars(
+                    select(ReviewImportBatch).where(ReviewImportBatch.product_id == product.id)
+                )
+            ]
+            if not batch_ids:
+                empty_state("No import batch is available for this product.")
+                return
+            report_batch_id = st.selectbox("Import batch", batch_ids)
+        markdown, json_report = export_review_report(
+            session,
+            product_id=product.id if report_scope == "Product" else None,
+            batch_id=report_batch_id,
+        )
+        st.warning("This report reflects only the imported sample, not the broader market.")
+        downloads = st.columns(2)
+        downloads[0].download_button(
+            "Export Markdown", markdown, f"product-{product.id}-review-mining.md", "text/markdown"
+        )
+        downloads[1].download_button(
+            "Export JSON",
+            json_report,
+            f"product-{product.id}-review-mining.json",
+            "application/json",
+        )
+
+
 def validation_experiments(session: Session) -> None:
     page_header(
         "Validation experiments",
@@ -1185,6 +1732,7 @@ PAGES = {
     "Evidence timeline": evidence_timeline,
     "Research Workbench": research_workbench,
     "Recommendation Brief": recommendation_brief,
+    "Review Mining": review_mining,
     "Supplier comparison": supplier_comparison,
     "Validation experiments": validation_experiments,
     "Decision history": decision_history,

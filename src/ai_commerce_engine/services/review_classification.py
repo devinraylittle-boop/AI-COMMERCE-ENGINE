@@ -115,6 +115,8 @@ def create_classification_version(
             )
         )
     review.active_classification_version = next_number
+    previous_themes = [assignment.theme for assignment in previous.assignments] if previous else []
+    new_themes = [match.theme for match in matches]
     record_audit(
         session,
         event_type="data_change",
@@ -122,8 +124,16 @@ def create_classification_version(
         entity_id=version.id,
         actor=actor,
         action="create_version",
-        before={"version": previous.version_number if previous else None},
-        after={"version": next_number, "themes": [match.theme for match in matches]},
+        before={
+            "version": previous.version_number if previous else None,
+            "themes": previous_themes,
+        },
+        after={
+            "version": next_number,
+            "themes": new_themes,
+            "added": sorted(set(new_themes) - set(previous_themes)),
+            "removed": sorted(set(previous_themes) - set(new_themes)),
+        },
         details=reason,
     )
     return version
@@ -199,6 +209,27 @@ def reclassify_reviews(
         classify_review(session, review, actor=actor, reason="Requested reclassification")
         for review in reviews
     ]
+
+
+def reclassify_scope(
+    session: Session,
+    *,
+    actor: str,
+    review_ids: list[int] | None = None,
+    batch_id: int | None = None,
+    product_id: int | None = None,
+) -> list[ReviewClassificationVersion]:
+    selected_scopes = sum(value is not None for value in (review_ids, batch_id, product_id))
+    if selected_scopes != 1:
+        raise ValueError("Choose exactly one review selection, import batch, or product")
+    statement = select(ReviewRecord.id)
+    if review_ids is not None:
+        statement = statement.where(ReviewRecord.id.in_(review_ids))
+    elif batch_id is not None:
+        statement = statement.where(ReviewRecord.import_batch_id == batch_id)
+    else:
+        statement = statement.where(ReviewRecord.product_id == product_id)
+    return reclassify_reviews(session, list(session.scalars(statement)), actor=actor)
 
 
 def restore_classification_version(
