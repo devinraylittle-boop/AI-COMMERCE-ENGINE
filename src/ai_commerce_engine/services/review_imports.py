@@ -386,3 +386,32 @@ def decide_duplicate(
         details=reason,
     )
     return review
+
+
+def set_review_flag(
+    session: Session,
+    review_id: int,
+    *,
+    flagged: bool,
+    actor: str,
+    reason: str,
+) -> ReviewRecord:
+    review = session.get(ReviewRecord, review_id)
+    if review is None:
+        raise ValueError("Review does not exist")
+    if not reason.strip():
+        raise ValueError("A flag reason is required")
+    before = review.manually_flagged
+    review.manually_flagged = flagged
+    record_audit(
+        session,
+        event_type="data_change",
+        entity_type="review_record",
+        entity_id=review.id,
+        actor=actor,
+        action="set_manual_attention_flag",
+        before={"manually_flagged": before},
+        after={"manually_flagged": flagged},
+        details=reason,
+    )
+    return review

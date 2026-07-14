@@ -75,6 +75,7 @@ from ai_commerce_engine.services.review_imports import (
     parse_csv,
     parse_json,
     preview_rows,
+    set_review_flag,
 )
 from ai_commerce_engine.services.review_reports import export_review_report
 from ai_commerce_engine.services.review_taxonomy import THEME_TAXONOMY
@@ -1069,6 +1070,16 @@ def review_mining(session: Session) -> None:
             verified = columns[2].selectbox("Verified purchase", ["Unknown", "Yes", "No"])
             title = st.text_input("Review title")
             body = st.text_area("Original review body *", height=160)
+            with st.expander("Optional review context"):
+                context_columns = st.columns(3)
+                source_url = context_columns[0].text_input("Source URL")
+                reviewer_name = context_columns[1].text_input("Reviewer display name")
+                helpful_votes = context_columns[2].number_input(
+                    "Helpful votes", min_value=0, value=None, step=1
+                )
+                geography = context_columns[0].text_input("Geography")
+                language = context_columns[1].text_input("Language")
+                variant_sku = context_columns[2].text_input("Variant or SKU")
             provenance = st.selectbox(
                 "Provenance",
                 ["Manual entry", "User-provided", "Authorized export", "Fictional"],
@@ -1083,6 +1094,8 @@ def review_mining(session: Session) -> None:
                         review=ReviewInput(
                             external_review_id=external_id or None,
                             source_platform=source,
+                            source_url=source_url or None,
+                            reviewer_display_name=reviewer_name or None,
                             rating=Decimal(str(rating)) if rating is not None else None,
                             rating_scale=Decimal(str(rating_scale)),
                             review_title=title or None,
@@ -1091,6 +1104,10 @@ def review_mining(session: Session) -> None:
                             verified_purchase=(
                                 True if verified == "Yes" else False if verified == "No" else None
                             ),
+                            helpful_vote_count=helpful_votes,
+                            geography=geography or None,
+                            language=language or None,
+                            variant_sku=variant_sku or None,
                             provenance_type=provenance,
                             is_fictional=fictional,
                         ),
@@ -1321,6 +1338,26 @@ def review_mining(session: Session) -> None:
                         "classification_version": selected_review.active_classification_version,
                     }
                 )
+                with st.form("manual_review_flag"):
+                    flagged = st.checkbox(
+                        "Requires human attention", value=selected_review.manually_flagged
+                    )
+                    flag_reason = st.text_input("Flag-change reason")
+                    if st.form_submit_button("Save attention flag"):
+                        try:
+                            set_review_flag(
+                                session,
+                                selected_review.id,
+                                flagged=flagged,
+                                actor="user",
+                                reason=flag_reason,
+                            )
+                            session.commit()
+                            st.success("Attention flag saved and audited.")
+                            st.rerun()
+                        except ValueError as exc:
+                            session.rollback()
+                            st.error(str(exc))
 
     with tabs[4]:
         duplicates = [review for review in reviews if review.duplicate_status != "unique"]
