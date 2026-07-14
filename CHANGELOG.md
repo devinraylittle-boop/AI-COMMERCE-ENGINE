@@ -4,6 +4,15 @@ All notable changes follow Keep a Changelog conventions.
 
 ## [Unreleased]
 
+### Work Order 003
+
+- Added immutable review import batches and protected original review records.
+- Added manual, CSV, and JSON intake with file preview, field mapping, dry runs, partial-import errors, templates, and SHA-256 source hashes.
+- Added deterministic exact/probable duplicate detection and auditable manual decisions.
+- Added a centralized 20-theme taxonomy, explainable rules classifier, append-only classification versions, human corrections, restoration, and scoped reclassification.
+- Added product/batch distributions, quality warnings, attention filters, and sample-scoped Markdown/JSON reports.
+- Added clearly fictional multi-product review demonstrations, review-mining UI, migration, tests, and `REVIEW_MINING.md`.
+
 ### Added
 
 - Initial Phase 1 local architecture and Streamlit dashboard.

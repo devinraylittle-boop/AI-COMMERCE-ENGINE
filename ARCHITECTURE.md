@@ -14,6 +14,8 @@ Streamlit UI
 
 Work Order 002 adds immutable `ProductVersion` and `ResearchEntry` streams. The `products` row remains a current projection for fast UI reads; optimistic concurrency requires edits to name the version on which they were based. Recommendation generation implements a `RecommendationGenerator` protocol and a deterministic implementation, leaving a narrow extension point for future model-assisted rendering without making a model a runtime dependency.
 
+Work Order 003 adds immutable `ReviewImportBatch` records, protected original `ReviewRecord` content, append-only `ReviewClassificationVersion` records, and theme assignments. File bytes are parsed in memory and discarded after preview/commit; SHA-256 hashes and immutable metadata remain. `ReviewClassifier` separates deterministic rules from future authorized classifiers. Analytics and reports read only active classification versions while retaining every prior interpretation.
+
 ## Reliability and auditability
 
 Evidence, scores, and status changes are historical records. Business mutations and their audit events share a transaction. SQLite foreign keys are enabled. Pydantic rejects malformed intake; service functions reject invalid ranges and impossible negative inputs. UI exceptions are logged, rolled back, and shown without pretending the operation succeeded.
@@ -24,4 +26,4 @@ Alembic migrations are the schema contract. `DATABASE_URL` isolates engine selec
 
 ## Trust boundaries
 
-The operator and imported CSVs are untrusted inputs. External URLs are stored as references; the application does not fetch them. There are no external write integrations. Local database and environment configuration are trusted deployment assets and must be access-controlled by the operator.
+The operator and imported CSV/JSON data are untrusted inputs. External URLs are stored as references; the application does not fetch them. Review imports require user-asserted provenance but cannot establish source authorization. There are no external write integrations. Local database and environment configuration are trusted deployment assets and must be access-controlled by the operator.

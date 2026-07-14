@@ -85,3 +85,6 @@ The directory is not a Git worktree. Branch, local diff, and commit provenance c
 - Add accessible help text and responsive page-level acceptance tests.
 - Add PostgreSQL CI after local workflows stabilize.
 
+## Subsequent remediation note
+
+This report preserves the Phase 1 point-in-time audit. Work Orders 002 and 003 subsequently added product/assumption versioning, evidence-aware research gates, migration lifecycle tests, Git history, and compliant review-import provenance and duplicate handling. Authentication, PostgreSQL integration testing, evidence supersession, and Streamlit page-level automation remain open.

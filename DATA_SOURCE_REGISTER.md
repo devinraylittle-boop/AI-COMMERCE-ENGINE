@@ -11,7 +11,7 @@ Status: preliminary architecture register; no live provider adapter is implement
 | Amazon SP-API | Seller/vendor operational data | Selling partner authorization through Login with Amazon | Verify; seller account may be required | Intended for authorized seller/vendor data, not unrestricted market mining; sensitive-data controls required | Defer until the business has authorized seller data |
 | Reddit Data API | Social/customer-language signal | OAuth client and policy-compliant approved use | Commercial use may require a separate agreement; price unknown | Current free eligible access is rate limited; deletion/retention duties apply; never treat posts as representative demand | Defer pending written commercial-use determination |
 | Supplier exports | Supplier quotes and terms | User-provided quote/export or future authorized supplier API | Usually no API fee; commercial relationship may apply | Quote freshness, identity, Incoterms, MOQ, quality, and performance require independent verification | Manual/CSV first |
-| Review exports | Complaints and buyer language | User-provided lawful export or future authorized marketplace API | Source-dependent | Preserve original text; respect personal-data and deletion requirements; sample bias is material | Phase F, before live adapters |
+| Review exports | Complaints and buyer language | User-provided lawful CSV/JSON, manual entry, or future authorized marketplace API | Source-dependent | Preserve original text; respect personal-data and deletion requirements; sample bias is material | Manual/CSV/JSON foundation implemented in Work Order 003 |
 | Meta/TikTok/other social APIs | Social signal | Platform app review, tokens, scopes, and approved use case | Unknown | Terms and scopes change; engagement is not demand; no scraping fallback | Defer until a narrow approved use case exists |
 
 ## Adapter contract required before activation
@@ -25,4 +25,3 @@ Every future adapter must report provider, collection method, authorization, rat
 - [Reddit Data API guidance](https://support.reddithelp.com/hc/en-us/articles/16160319875092-Reddit-Data-API-Wiki) and [Data API Terms](https://redditinc.com/policies/data-api-terms)
 
 Costs and access conditions must be reverified immediately before implementation or approval. No source in this register authorizes scraping or paid access.
-

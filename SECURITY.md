@@ -21,4 +21,8 @@ Restrict filesystem access to the database and `.env`; back up and encrypt sensi
 
 Future review/social adapters must implement source-specific deletion and retention duties. Attachment references are text only; file upload/storage is not implemented and must receive path, malware, content-type, size, and access-control review before introduction.
 
+Review files are parsed in memory and are not retained. Only the filename, SHA-256 hash, mapping/source metadata, validated records, and row-level counts/errors remain. Review text and reviewer display names are untrusted and may contain personal data, malicious spreadsheet formulas, or copyrighted content. Import only authorized, necessary data; keep the application local; do not render review HTML; and do not copy exported review text into formula-capable spreadsheets without sanitization.
+
+Import batches and original review bodies have ORM-level immutability guards. These protect normal application paths, not a database administrator or direct bulk SQL. Database access, backups, and future retention/deletion tooling remain security boundaries.
+
 Report security issues privately to the repository owner. Do not include secrets or personal data in issue reports.

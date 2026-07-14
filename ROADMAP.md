@@ -26,8 +26,9 @@
 - Phase C Opportunity Vault — completed
 - Phase D Research Workbench — completed
 - Phase E deterministic recommendation brief — completed
-- Phase F compliant review-mining foundation — next
-- Phases G–I Mission Control, provider adapters, and Profit Sprint — deferred until dependencies exist
+- Phase F compliant review-mining foundation — completed in Work Order 003
+- Phase G Mission Control and action queue — next
+- Phases H–I provider adapters and Profit Sprint — deferred until dependencies exist
 
 ## Later, only after foundation validation and explicit approval
 

@@ -45,3 +45,19 @@ The raw Opportunity Vault record includes observation, hypothesis, source contex
 ## research_entries
 
 Append-only, per-section research versions. Each row stores product, one of 22 section keys, sequential version, content, internal evidence IDs, provenance, actor, reason, and timestamp.
+
+## review_import_batches
+
+Immutable review-intake envelope containing product, source platform/type, method, optional original filename and SHA-256 hash, actor, timestamps, submitted/accepted/duplicate/rejected/error counts, status, notes, fictional flag, and a JSON metadata snapshot. Uploaded file bytes are not stored.
+
+## review_records
+
+Preserves product/batch association, external identity, source URL, optional reviewer/rating/date/purchase/helpfulness/geography/language/variant context, exact original body, derived normalized text and fingerprint, provenance, fictional label, duplicate status/link, manual-attention flag, and active classification version number. Original body and record deletion are protected in application ORM workflows.
+
+## review_classification_versions
+
+Append-only interpretation header with review, sequential version, method, classifier version, actor, reason, superseded-version link, timestamp, and active flag. Reclassification and restoration create new versions.
+
+## review_theme_assignments
+
+One theme/subtheme per classification version with confidence, matched evidence or phrase, classification source, human-confirmation status, and notes. Themes reference the maintainable application taxonomy.
