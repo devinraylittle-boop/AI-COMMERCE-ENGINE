@@ -27,6 +27,9 @@ All notable changes follow Keep a Changelog conventions.
 - Reclassified the committed synthetic cases and answers as open training material because a public answer key cannot support a blind calibration.
 - Added formal calibration governance separating Case Steward, Packet Custodian, two independent coders, anonymized Arbiter, and Mechanism Owner; added role declarations, sealed-reference custody, fresh-AI eligibility, and an uncertainty-first coder sheet.
 - Explicitly excluded the founder and participating Codex architect from independent-coder roles due to prior method involvement and reference exposure.
+- Completed Home Organization Behavioral Signal Sprint v0.1 using 34 lawful public-source observations across ten narrow areas without interviews, synthetic evidence, public outreach, or new software.
+- Selected under-sink fit uncertainty as the leading test candidate; retained pantry containment and closet compatibility; preregistered disposable test claims, consequential behaviors, $25 ceilings, and kill signals.
+- Kept six ranking dimensions separate and named refrigerator aesthetics, toy storage, and garage systems as dangerous false positives rather than collapsing evidence into an overall score.
 - Marked Learning ROI observation-only until several completed experiments expose its behavior and gaming risks.
 
 ### Work Order 003
