@@ -2,7 +2,7 @@ from datetime import date, datetime
 from decimal import Decimal
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator, model_validator
 
 
 class ProductCreate(BaseModel):
@@ -126,3 +126,53 @@ class OpportunityCreate(BaseModel):
     @classmethod
     def clean_tags(cls, values: list[str]) -> list[str]:
         return sorted({value.strip().lower() for value in values if value.strip()})
+
+
+class ReviewInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=False)
+
+    external_review_id: str | None = Field(default=None, max_length=300)
+    source_platform: str = Field(min_length=1, max_length=100)
+    source_url: HttpUrl | None = None
+    reviewer_display_name: str | None = Field(default=None, max_length=300)
+    rating: Decimal | None = Field(default=None, ge=0)
+    rating_scale: Decimal | None = Field(default=Decimal("5"), gt=0)
+    review_title: str | None = None
+    original_review_body: str = Field(min_length=1)
+    review_date: date | None = None
+    verified_purchase: bool | None = None
+    helpful_vote_count: int | None = Field(default=None, ge=0)
+    geography: str | None = Field(default=None, max_length=150)
+    language: str | None = Field(default=None, max_length=30)
+    variant_sku: str | None = Field(default=None, max_length=300)
+    provenance_type: Literal["User-provided", "Manual entry", "Authorized export", "Fictional"]
+    is_fictional: bool = False
+
+    @field_validator("source_platform")
+    @classmethod
+    def clean_source(cls, value: str) -> str:
+        cleaned = value.strip()
+        if not cleaned:
+            raise ValueError("Source platform is required")
+        return cleaned
+
+    @field_validator("original_review_body")
+    @classmethod
+    def require_visible_body(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("Review body cannot be blank")
+        return value
+
+    @model_validator(mode="after")
+    def validate_rating_and_provenance(self) -> "ReviewInput":
+        if self.rating is not None and self.rating_scale is None:
+            raise ValueError("Rating scale is required when rating is supplied")
+        if (
+            self.rating is not None
+            and self.rating_scale is not None
+            and self.rating > self.rating_scale
+        ):
+            raise ValueError("Rating cannot exceed rating scale")
+        if self.provenance_type == "Fictional" and not self.is_fictional:
+            raise ValueError("Fictional provenance must be labeled fictional")
+        return self

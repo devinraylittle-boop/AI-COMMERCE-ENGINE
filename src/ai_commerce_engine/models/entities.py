@@ -13,6 +13,10 @@ from sqlalchemy import (
     String,
     Text,
     UniqueConstraint,
+    event,
+)
+from sqlalchemy import (
+    inspect as sa_inspect,
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -68,6 +72,8 @@ class Product(Base):
     evidence: Mapped[list["Evidence"]] = relationship(back_populates="product")
     scores: Mapped[list["ScoreSnapshot"]] = relationship(back_populates="product")
     versions: Mapped[list["ProductVersion"]] = relationship(back_populates="product")
+    review_batches: Mapped[list["ReviewImportBatch"]] = relationship(back_populates="product")
+    reviews: Mapped[list["ReviewRecord"]] = relationship(back_populates="product")
 
 
 class ProductVersion(Base):
@@ -308,3 +314,131 @@ class AppSetting(Base):
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=utcnow, onupdate=utcnow
     )
+
+
+class ReviewImportBatch(Base):
+    __tablename__ = "review_import_batches"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    batch_name: Mapped[str] = mapped_column(String(200))
+    source_type: Mapped[str] = mapped_column(String(50))
+    source_platform: Mapped[str] = mapped_column(String(100), index=True)
+    import_method: Mapped[str] = mapped_column(String(30))
+    original_filename: Mapped[str | None] = mapped_column(String(500))
+    original_file_hash: Mapped[str | None] = mapped_column(String(64), index=True)
+    product_id: Mapped[int] = mapped_column(ForeignKey("products.id"), index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    created_by: Mapped[str] = mapped_column(String(100))
+    record_count_submitted: Mapped[int] = mapped_column(Integer)
+    record_count_accepted: Mapped[int] = mapped_column(Integer)
+    duplicate_count: Mapped[int] = mapped_column(Integer)
+    rejected_count: Mapped[int] = mapped_column(Integer)
+    error_count: Mapped[int] = mapped_column(Integer)
+    import_status: Mapped[str] = mapped_column(String(30), index=True)
+    notes: Mapped[str | None] = mapped_column(Text)
+    is_fictional: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    metadata_snapshot: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+    product: Mapped[Product] = relationship(back_populates="review_batches")
+    reviews: Mapped[list["ReviewRecord"]] = relationship(back_populates="import_batch")
+
+
+class ReviewRecord(Base):
+    __tablename__ = "review_records"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    product_id: Mapped[int] = mapped_column(ForeignKey("products.id"), index=True)
+    import_batch_id: Mapped[int] = mapped_column(ForeignKey("review_import_batches.id"), index=True)
+    external_review_id: Mapped[str | None] = mapped_column(String(300), index=True)
+    source_platform: Mapped[str] = mapped_column(String(100), index=True)
+    source_url: Mapped[str | None] = mapped_column(String(1000))
+    reviewer_display_name: Mapped[str | None] = mapped_column(String(300))
+    rating: Mapped[Decimal | None] = mapped_column(Numeric(6, 2))
+    rating_scale: Mapped[Decimal | None] = mapped_column(Numeric(6, 2))
+    review_title: Mapped[str | None] = mapped_column(Text)
+    original_review_body: Mapped[str] = mapped_column(Text)
+    normalized_review_text: Mapped[str] = mapped_column(Text)
+    review_date: Mapped[date | None] = mapped_column(Date, index=True)
+    imported_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    verified_purchase: Mapped[bool | None] = mapped_column(Boolean)
+    helpful_vote_count: Mapped[int | None] = mapped_column(Integer)
+    geography: Mapped[str | None] = mapped_column(String(150))
+    language: Mapped[str | None] = mapped_column(String(30))
+    variant_sku: Mapped[str | None] = mapped_column(String(300))
+    provenance_type: Mapped[str] = mapped_column(String(50))
+    is_fictional: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    normalized_fingerprint: Mapped[str] = mapped_column(String(64), index=True)
+    duplicate_status: Mapped[str] = mapped_column(String(30), default="unique", index=True)
+    duplicate_of_review_id: Mapped[int | None] = mapped_column(
+        ForeignKey("review_records.id"), index=True
+    )
+    active_classification_version: Mapped[int | None] = mapped_column(Integer)
+    manually_flagged: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+    product: Mapped[Product] = relationship(back_populates="reviews")
+    import_batch: Mapped[ReviewImportBatch] = relationship(back_populates="reviews")
+    classifications: Mapped[list["ReviewClassificationVersion"]] = relationship(
+        back_populates="review", cascade="all, delete-orphan"
+    )
+
+
+class ReviewClassificationVersion(Base):
+    __tablename__ = "review_classification_versions"
+    __table_args__ = (UniqueConstraint("review_id", "version_number"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    review_id: Mapped[int] = mapped_column(ForeignKey("review_records.id"), index=True)
+    version_number: Mapped[int] = mapped_column(Integer)
+    classification_method: Mapped[str] = mapped_column(String(50))
+    classifier_version: Mapped[str] = mapped_column(String(50))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    created_by: Mapped[str] = mapped_column(String(100))
+    reason_for_new_version: Mapped[str] = mapped_column(Text)
+    supersedes_version_id: Mapped[int | None] = mapped_column(
+        ForeignKey("review_classification_versions.id")
+    )
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+
+    review: Mapped[ReviewRecord] = relationship(back_populates="classifications")
+    assignments: Mapped[list["ReviewThemeAssignment"]] = relationship(
+        back_populates="classification_version", cascade="all, delete-orphan"
+    )
+
+
+class ReviewThemeAssignment(Base):
+    __tablename__ = "review_theme_assignments"
+    __table_args__ = (UniqueConstraint("classification_version_id", "theme", "subtheme"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    classification_version_id: Mapped[int] = mapped_column(
+        ForeignKey("review_classification_versions.id"), index=True
+    )
+    theme: Mapped[str] = mapped_column(String(100), index=True)
+    subtheme: Mapped[str | None] = mapped_column(String(150))
+    confidence: Mapped[Decimal] = mapped_column(Numeric(5, 4))
+    matching_evidence: Mapped[str | None] = mapped_column(Text)
+    classification_source: Mapped[str] = mapped_column(String(50))
+    human_confirmed_status: Mapped[str] = mapped_column(String(30), default="unreviewed")
+    notes: Mapped[str | None] = mapped_column(Text)
+
+    classification_version: Mapped[ReviewClassificationVersion] = relationship(
+        back_populates="assignments"
+    )
+
+
+@event.listens_for(ReviewImportBatch, "before_update")
+@event.listens_for(ReviewImportBatch, "before_delete")
+def protect_review_batch(*_: Any) -> None:
+    raise ValueError("Review import batches are immutable")
+
+
+@event.listens_for(ReviewRecord, "before_update")
+def protect_original_review_text(_: Any, __: Any, target: ReviewRecord) -> None:
+    if sa_inspect(target).attrs.original_review_body.history.has_changes():
+        raise ValueError("Original review text is immutable")
+
+
+@event.listens_for(ReviewRecord, "before_delete")
+def protect_review_record(*_: Any) -> None:
+    raise ValueError("Imported review records cannot be deleted")
