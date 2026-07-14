@@ -1,0 +1,33 @@
+from ai_commerce_engine.models.entities import (
+    AppSetting,
+    AuditLog,
+    Evidence,
+    Opportunity,
+    OpportunityEvidenceLink,
+    OpportunityProductLink,
+    Product,
+    ProductFieldChange,
+    ProductVersion,
+    ResearchEntry,
+    ScoreSnapshot,
+    StatusHistory,
+    SupplierOffer,
+    ValidationExperiment,
+)
+
+__all__ = [
+    "AppSetting",
+    "AuditLog",
+    "Evidence",
+    "Opportunity",
+    "OpportunityEvidenceLink",
+    "OpportunityProductLink",
+    "Product",
+    "ProductFieldChange",
+    "ProductVersion",
+    "ResearchEntry",
+    "ScoreSnapshot",
+    "StatusHistory",
+    "SupplierOffer",
+    "ValidationExperiment",
+]
