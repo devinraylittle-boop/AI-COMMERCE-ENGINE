@@ -1,0 +1,2 @@
+experiment_id,laboratory,mechanism,claim_slots_frozen,accepted_ekus,rejected_ekus,active_human_hours,external_cost_usd,deliberate_context_switches,time_roi_eku_per_hour,cash_roi_eku_per_dollar,attention_roi_eku_per_switch,eligible_ekus_reused,reuse_yield,decision_changed,limitations,status
+comparative_lab_selection_001,comparative,all,7,1,0,,,1,,,,0,0,Selected Home Organization for full problem discovery; preserved Coffee and Dogs as reserves,Desk-cycle EKU counts are provisional until an independent later decision reuses the result,complete

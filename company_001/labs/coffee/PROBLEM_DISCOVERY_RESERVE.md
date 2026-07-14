@@ -1,8 +1,10 @@
-# Company 001 — Problem Discovery 001
+# Coffee Laboratory — Problem Discovery Reserve
 
 **Name:** Experiment Zero
 
-**Status:** preregistered; authorized for transparent, permission-based problem research
+**Status:** reserve protocol; all public outreach frozen; not the active Company 001 experiment
+
+This coffee-specific protocol is preserved for reuse only if the comparative laboratory cycle selects Coffee. Do not send its moderator request or public research question while the freeze remains active.
 
 **Question:** What are the top recurring frustrations in the home-espresso workflow, ranked by frequency and consequence before ACE selects a mechanism, solution, or product?
 

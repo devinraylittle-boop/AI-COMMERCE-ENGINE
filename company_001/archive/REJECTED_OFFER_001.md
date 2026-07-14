@@ -33,7 +33,7 @@ The proposal reversed ACE's required sequence by allowing an interesting product
 
 This candidate may be reconsidered only if:
 
-1. `company_001/PROBLEM_DISCOVERY_001.md` admits puck-preparation mess to the top-five problem set.
+1. Coffee is selected in a future comparative cycle and `company_001/labs/coffee/PROBLEM_DISCOVERY_RESERVE.md` admits puck-preparation mess to its top-five problem set.
 2. A separate experiment selects Expertise Ladder or another mechanism based on the admitted problem.
 3. Solution comparison shows a physical funnel outperforms dose correction, basket correction, technique education, a dosing cup, and doing nothing for a defined segment.
 4. A product comparison evaluates fit, failure, regret, price, and contribution without preferring compensated products.

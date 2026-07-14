@@ -18,6 +18,9 @@ All notable changes follow Keep a Changelog conventions.
 - Selected Company 001 Offer 001: Expertise Ladder applied to espresso-ground spill with one fit-checked 58 mm dosing-funnel candidate, explicit no-buy criteria, public test copy, and fixed advance/reject gates.
 - Vetoed Offer 001 before exposure because the espresso problem landscape and mechanism had not been earned; archived the work as a nonoperative candidate laboratory.
 - Added Problem Discovery 001 (Experiment Zero): permission-based problem collection, six source strata, neutral coding, source-balanced frequency/consequence ranking, top-five admission gates, and a minimal evidence log.
+- Froze all public outreach and moved the coffee-specific Problem Discovery protocol into reserve.
+- Added Comparative Laboratory Selection 001 across Dogs, Coffee, and Home Organization; selected Home Organization for the next full discovery cycle using ordinal Learning ROI dominance with explicit reversal conditions.
+- Defined Earned Knowledge Units and separate time, cash, attention, and reuse measures instead of a false-precision Learning Score.
 
 ### Work Order 003
 

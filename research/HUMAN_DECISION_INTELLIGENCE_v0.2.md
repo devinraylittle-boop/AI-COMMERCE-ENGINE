@@ -36,6 +36,10 @@ Reality is Chairman of the Board. No founder, model, metric, or narrative may ov
 
 ACE earns recommendations in this order: rank problems, establish consequence and recurrence, observe urgency and current workarounds, select a mechanism, compare solution classes, and only then evaluate products. A product may instantiate an earned mechanism; an interesting product may not select the mechanism retroactively.
 
+### Learning ROI
+
+ACE selects experiments by expected reusable knowledge relative to time, cash, and attention, then measures realized Learning ROI with preregistered Earned Knowledge Units. One EKU is a bounded evidence-backed claim that changes a named future decision and can be reused beyond one product. Documents, rows, features, and activity do not count. Time, cash, attention, and later reuse are reported separately; ACE does not hide them inside a false-precision score.
+
 ### Decision Quality per Customer
 
 This is initially a measurement framework, not a single fabricated score. Report its components separately until real evidence supports aggregation:

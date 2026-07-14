@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Company 001 — Problem Discovery 001 (Experiment Zero). Human Decision Intelligence remains the long-term program. Offer 001 was vetoed before exposure because ACE had not ranked espresso frustrations or earned a mechanism, solution, or product recommendation. Espresso is a candidate laboratory only. The active work is a source-balanced, permission-based ranking of recurring home-espresso problems by frequency, consequence, recurrence, and workaround failure. No product test, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
+Company 001 — Comparative Laboratory Selection 001 complete. All public outreach is frozen. A symmetric internal desk cycle compared Dogs / Trust-Mediated Care, Coffee / Expertise Ladder, and Home Organization / Friction Removal by expected Learning ROI. Home Organization advances to the first full Problem Discovery cycle; Coffee remains first reserve and Dogs is deferred. This selects a learning laboratory only—not a market, validated mechanism, problem, solution, product, or offer. No product test, community contact, behavioral-profile architecture, inventory, payment, affiliate action, advertising, or new application page is authorized.
 
 ## Completed work
 
@@ -30,6 +30,9 @@ Company 001 — Problem Discovery 001 (Experiment Zero). Human Decision Intellig
 - Human Decision Intelligence v0.2: Decision Quality per Customer, Customer Relationship Value, direct regret measurement, and Reality-as-governance doctrine.
 - Archived and explicitly vetoed Company 001 Offer 001 before any exposure, preserving it only as a candidate laboratory and cultural correction.
 - Preregistered Problem Discovery 001 with six evidence strata, neutral episode coding, a consequence scale, source-balanced ranking, a top-five admission gate, moderator-permission language, and an empty minimal evidence log.
+- Froze public outreach and preserved the coffee-specific Problem Discovery protocol as a reserve rather than an active experiment.
+- Completed Comparative Laboratory Selection 001 using the same seven claim slots and an ordinal dominance comparison; advanced Home Organization, reserved Coffee, and deferred Dogs with explicit reversal conditions.
+- Defined Learning ROI through preregistered Earned Knowledge Units per time, cash, and attention, plus later reuse yield; added the first ledger without inventing a scalar learning score.
 
 ## Current architecture
 
@@ -48,11 +51,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Select one relevant community account and ask moderators for permission using the exact request in `company_001/PROBLEM_DISCOVERY_001.md`.
-2. Qualify and predeclare the manual sampling rule for each planned evidence source before extracting episodes.
-3. Collect problem episodes across the six strata in `company_001/PROBLEM_DISCOVERY_001_EVIDENCE.csv`; do not collect product interest.
-4. Freeze and audit the dataset, publish the full ranking, and apply the unchanged top-five gate.
-5. Compare only admitted problems against all three Mechanism Cards; select no product before a mechanism/problem pair survives separate falsification.
+1. Keep all public outreach frozen.
+2. Adapt the common Problem Discovery fields to Home Organization without naming products or assuming Friction Removal is correct.
+3. Predeclare room/context boundaries and exclude mold, pests, structural installation, hoarding disorder, and other cases requiring qualified professional help.
+4. Qualify two existing customer-language sources, the YouGov market source, two expert/guide sources, and one product-failure source before extraction.
+5. Collect and audit a small internal calibration sample; authorize later public permission-seeking only if coding can distinguish possessions/motivation, routine, fit/access, durability, and environmental failure reliably.
 
 No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 
