@@ -4,7 +4,7 @@
 
 **Budget principle:** validation spending is a ceiling, not a target
 
-**Primary outcome:** kept, satisfactory, contribution-positive purchase
+**Primary outcome:** a high-quality customer decision; for transactions, a kept, satisfactory, contribution-positive purchase
 
 **Operating rule:** no test may depend on deception, pressure, sensitive profiling, or obstructed choice.
 
@@ -26,6 +26,7 @@ Prototype tasks may test comprehension and expose confusion. They cannot establi
 | 8 | A post-purchase setup guide improves successful use and reduces avoidable returns. | Send a manually prepared guide to a randomized eligible cohort after launch. | setup completion; retained order | support contacts, unsubscribe, return rate | guide annoys customers or cannot change use outcomes |
 | 9 | An opt-in reminder near the observed replenishment interval outperforms generic promotional email. | After enough real repeatable orders, randomize timing/content against no reminder or generic message. | incremental repurchase contribution | opt-out, complaint, excess return, frequency cap | lift disappears after incrementality/returns are counted |
 | 10 | A capability-gap upgrade guide produces better retained upgrades than aspirational premium framing. | Prototype current-vs-upgrade capability matrix; later randomize among eligible owners. | correct upgrade/no-upgrade choice; later kept upgrade | downgrade/keep-current option use, returns, trust | premium framing wins only by creating regret or low-fit orders |
+| 11 | A fit-qualified dosing-funnel recommendation produces less anticipated and experienced regret than a star-rating-led recommendation. | Run the no-payment public signal test in `company_001/OFFER_001.md`; later randomize fit check versus conventional merchandising only after a lawful transaction path exists. | fit-qualified notification request; later “would choose again” | no-buy rate, compatibility failures, price resistance, returns | the fit check does not change choices or cannot identify regret conditions |
 
 ## Recommended execution order
 

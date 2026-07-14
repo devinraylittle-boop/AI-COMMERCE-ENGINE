@@ -1,8 +1,8 @@
-# Consumer Behavior Intelligence Program v0.1
+# Human Decision Intelligence — Consumer Program v0.2
 
 **Status:** versioned research report; no architecture authorized
 
-**Decision question:** How can ACE predict commercially useful behavior while improving customer decisions rather than exploiting human vulnerability?
+**Decision question:** How can ACE improve decisions under uncertainty for both the customer and the business without exploiting human vulnerability?
 
 **Evidence cutoff:** 2026-07-14
 
@@ -22,7 +22,29 @@ first-party behavior
   -> reusable causal knowledge
 ```
 
-The primary economic target should be **kept, satisfactory, contribution-positive purchases**, not gross conversion. A conversion that produces regret, return expense, support burden, or lost trust is not success.
+The transaction-level economic target is **kept, satisfactory, contribution-positive purchases**, not gross conversion. A conversion that produces regret, return expense, support burden, or lost trust is not success.
+
+The company-level North Star is **Decision Quality per Customer**. It asks whether an interaction left the customer with a decision that fit their needs and left ACE with truthful learning—even when the correct decision was not to buy. The long-run asset is **Customer Relationship Value**, not merely transaction or lifetime revenue.
+
+### Mission and governance
+
+> Leave every customer better off after interacting with us than before—even if they do not buy.
+
+Reality is Chairman of the Board. No founder, model, metric, or narrative may overrule observed outcomes. ACE optimizes honest decisions; it does not optimize purchases in isolation.
+
+### Decision Quality per Customer
+
+This is initially a measurement framework, not a single fabricated score. Report its components separately until real evidence supports aggregation:
+
+- **fit:** did the selected or rejected option match the stated use case?
+- **informedness:** did the customer understand cost, limitations, compatibility, and alternatives?
+- **outcome:** was a purchase kept and useful after the applicable evaluation window?
+- **regret:** would the customer make the same decision again, including a no-purchase decision?
+- **control:** could the customer decline, return, unsubscribe, or change course without obstruction?
+- **relationship:** did trust, voluntary return, referral, useful feedback, or future permission improve?
+- **business truth:** did ACE earn contribution or a reliable lesson rather than vanity engagement?
+
+Do not collapse these dimensions until weighting, missing-data behavior, and gaming risks have been tested.
 
 ## Ethical and commercial boundary
 
@@ -162,6 +184,7 @@ Descriptive evidence can generate a hypothesis. Prediction can allocate attentio
 | abandonment | eligible session/cart without order | session / 24 hours | identify information or process gaps | do not equate with persuasion opportunity |
 | keep | order not returned/cancelled after window | category-specific | optimize real demand | support burden and satisfaction |
 | return | returned item or initiated return | 30-90 days by policy | improve fit, product, and content | never obstruct a predicted returner |
+| regret | customer reports they would choose differently, expresses material mismatch, or exhibits a validated regret proxy | after use / before and after return window | prevent unsuitable sales and improve guidance | never use regret risk to deny service, price discriminate, or obstruct purchase |
 | repurchase | another eligible order | expected usage window | replenishment timing | opt-out, excess-purchase risk |
 | upgrade | higher-capability product after ownership/use | category-specific | explain meaningful improvement | cheaper sufficient alternative shown |
 | contribution-positive satisfaction | kept order with positive contribution and no severe complaint proxy | after return window | primary commercial outcome | cannot substitute silence for satisfaction |
@@ -187,6 +210,20 @@ Descriptive evidence can generate a hypothesis. Prediction can allocate attentio
 - Predictions never become facts in customer records.
 - Explanations distinguish feature association from causal effect.
 - A treatment is deployed only when it improves a preregistered customer/business outcome in an experiment.
+
+### Regret prediction doctrine
+
+Regret is not equivalent to return. Some customers regret items they keep; others return a good product because circumstances changed. ACE must collect regret directly and optionally before trusting behavioral proxies.
+
+An initial regret label may combine:
+
+- an optional post-use “Would you make the same choice again?” response;
+- stated mismatch between expected and actual use;
+- optional reason for return, cancellation, or support contact;
+- product unused or abandoned when that can be observed lawfully and proportionately;
+- a future purchase that replaces the item unusually quickly, treated only as a weak proxy.
+
+The first model should be a transparent baseline. It may recommend more information, a cheaper alternative, a no-buy option, or human review. It must never diagnose a customer, deny an otherwise valid transaction, change price, or exploit the predicted reason for regret.
 
 ## Ethical interventions by decision need
 

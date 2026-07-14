@@ -14,6 +14,8 @@ All notable changes follow Keep a Changelog conventions.
 - Added source-qualification and interview-debrief records plus two training-only pilot interviews before formal mechanism collection.
 - Documented mechanisms as families of causal claims, ACE's scientific sequence, a future claim-blinding direction, and the evidence-first architecture purchase rule without changing software or card schemas.
 - Added Consumer Behavior Intelligence v0.1 as research-only doctrine: operational decision states, bounded predictions, ethical interventions, minimal-data governance, causal evaluation, candidate-context applications, and ten falsifiable behavioral hypotheses.
+- Advanced the program to Human Decision Intelligence v0.2 with Decision Quality per Customer, Customer Relationship Value, regret prediction, and Reality-first governance.
+- Selected Company 001 Offer 001: Expertise Ladder applied to espresso-ground spill with one fit-checked 58 mm dosing-funnel candidate, explicit no-buy criteria, public test copy, and fixed advance/reject gates.
 
 ### Work Order 003
 

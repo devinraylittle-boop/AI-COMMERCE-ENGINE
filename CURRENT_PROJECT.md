@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Operation First Principle - Reality Check for Company 001. The compliant review-mining foundation is complete. ACE now has a versioned Consumer Behavior Intelligence research program that defines operational decision states, ethical interventions, minimal-data prediction targets, and ten falsifiable behavioral hypotheses. No behavioral-profile architecture, Mission Control, or additional feature page is authorized.
+Company 001 — Offer 001 signal test. Human Decision Intelligence is the long-term program name; the first consumer application defines operational decision states, honest interventions, minimal-data prediction targets, Decision Quality per Customer, Customer Relationship Value, and regret prediction. Company 001 has selected Expertise Ladder, espresso-ground spill during puck preparation, and one fit-checked 58 mm magnetic dosing-funnel candidate. No behavioral-profile architecture, inventory, payment, advertising, or new application page is authorized.
 
 ## Completed work
 
@@ -27,6 +27,8 @@ Operation First Principle - Reality Check for Company 001. The compliant review-
 - Evidence Supply Chain operating model with five complementary evidence classes, source qualification, collection cadence, mechanism-specific supply maps, release gates, and reusable source/interview records.
 - Working causal-claim doctrine and future claim-blinding direction, intentionally documented without changing Mechanism Cards or adding architecture.
 - Consumer Behavior Intelligence v0.1: research synthesis, decision journey, trigger/barrier taxonomy, signal-to-state uncertainty map, causal measurement roadmap, privacy limits, three candidate-context applications, and ten prioritized working hypotheses.
+- Human Decision Intelligence v0.2: Decision Quality per Customer, Customer Relationship Value, direct regret measurement, and Reality-as-governance doctrine.
+- Company 001 Offer 001: one mechanism, one narrow espresso-workflow problem, one product candidate, honest no-buy criteria, public signal-test copy, evidence fields, and advance/reject gates.
 
 ## Current architecture
 
@@ -45,11 +47,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Convert the first concrete Company 001 offer into test materials for behavioral hypotheses 1-4: total-cost transparency, fit/compatibility, “who should not buy,” and balanced review themes.
-2. Use small comprehension/usability tests only to debug those materials; do not count stated intention as demand.
-3. Define instrumentation for purchase, cancellation, return, contribution, support, and opt-out before any live randomized test.
-4. Register and qualify recurring Classes A-E sources with `research/templates/EVIDENCE_SOURCE_RECORD.md`.
-5. Run the cheapest real behavioral experiment that can reject one hypothesis, then wait through the relevant return window.
+1. Publish the exact no-payment signal-test copy in `company_001/OFFER_001.md` once in a venue whose rules permit transparent research questions.
+2. Record fit-qualified responses without collecting public email addresses; stop after seven days or 25 substantive responses.
+3. Apply the advance/reject gates without moving them after seeing results.
+4. If the gate passes, establish a business contact/privacy channel and seek a disclosed manufacturer partnership or another authorized transaction path.
+5. Only then design a transaction experiment with regret, return, contribution, support, and customer-control outcomes.
 
 No major architecture is authorized until reality exposes evidence ACE cannot represent reliably and a documented process cannot repair the gap.
 
