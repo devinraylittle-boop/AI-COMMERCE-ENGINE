@@ -40,6 +40,8 @@ Company 001 — focused storefront execution. The mission is to build a small, p
 - Reset Company 001 around a three-to-five-product storefront; created the Founding Five recommendation set, selected a coherent three-product kitchen/utility launch trio, defined two reserves, documented one honest recommendation page per product, and set sourcing, sample, shipping, claim, and contribution-margin gates.
 - Built Storefront Zero as a private, non-indexed Little Built concept with a homepage, collection, three candidate product pages, About, FAQ, draft shipping/returns principles, and a recommendation standard. Checkout, pricing, supplier claims, customer data collection, and artificial urgency remain absent.
 - Passed the executable Delete Test with one candidate removed and again with two removed; the brand promise, position, and recommendation principles remain intact with a one-product catalog.
+- Added Storefront Review Checklist v0.1, a page-by-page Executive Content Export, and a nine-page portable HTML export so Storefront Zero can be reviewed without private-host access.
+- Corrected Storefront Zero's clean-worktree build path by moving the required Sites packaging helper out of the repository's ignored `build/` directory and explicitly approving required dependency build scripts.
 - Placed Learning ROI in observation-only status until multiple experiments reveal how the metric behaves and can be gamed.
 
 ## Current architecture
@@ -59,7 +61,7 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Founder reviews Storefront Zero as a buying experience: promise clarity, trust, collection coherence, navigation, no-buy guidance, and the working Little Built identity.
+1. Founder reviews the Markdown and portable HTML exports using Storefront Review Checklist v0.1: promise clarity, trust, collection coherence, navigation, no-buy guidance, and the working Little Built identity.
 2. Record where the prototype creates confidence, confusion, or a desire for evidence; do not convert preferences into architecture automatically.
 3. Decide whether the storefront has earned one explicitly approved supplier learning conversation and which single candidate should lead it.
 4. If approved later, use that conversation to test the quality standard and information requirements—not to negotiate, buy inventory, or imply a commitment.

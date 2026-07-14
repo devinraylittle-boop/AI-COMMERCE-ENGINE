@@ -39,6 +39,8 @@ All notable changes follow Keep a Changelog conventions.
 - Added explicit no-buy guidance, cheaper and more expensive alternatives, unresolved evidence, sample gates, a disabled checkout state, and draft-only policy language without supplier or commercial claims.
 - Added and passed an executable Delete Test proving the brand promise and recommendation standard remain coherent after removing one candidate and then two.
 - Replaced supplier outreach as the immediate next action with founder review of Storefront Zero; outreach remains unauthorized.
+- Added Storefront Review Checklist v0.1, a complete Executive Content Export, and a portable nine-page HTML review copy with local navigation and styling.
+- Added a repeatable export script and corrected a clean-worktree storefront build failure caused by an ignored Sites packaging helper.
 
 ### Work Order 003
 
