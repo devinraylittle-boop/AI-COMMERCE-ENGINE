@@ -35,6 +35,10 @@ All notable changes follow Keep a Changelog conventions.
 - Added a read-only sourcing shortlist with at least two candidate B2B paths per launch product, a common twelve-question inquiry, contact order, and automatic rejection conditions.
 - Deferred cross-domain tournaments and all laboratory work that does not directly increase the probability of a profitable storefront launch.
 - Marked Learning ROI observation-only until several completed experiments expose its behavior and gaming risks.
+- Built Storefront Zero under the working Little Built identity with a private, non-indexed seven-route buying experience and three transparent candidate product pages.
+- Added explicit no-buy guidance, cheaper and more expensive alternatives, unresolved evidence, sample gates, a disabled checkout state, and draft-only policy language without supplier or commercial claims.
+- Added and passed an executable Delete Test proving the brand promise and recommendation standard remain coherent after removing one candidate and then two.
+- Replaced supplier outreach as the immediate next action with founder review of Storefront Zero; outreach remains unauthorized.
 
 ### Work Order 003
 

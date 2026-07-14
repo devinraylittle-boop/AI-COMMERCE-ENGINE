@@ -1,0 +1,15 @@
+import Link from "next/link";
+import { ProductCard } from "./components/ProductCard";
+import { ProductSketch } from "./components/ProductSketch";
+import { brand, buildStorefrontView } from "./lib/catalog";
+
+export default function Home() {
+  const { products } = buildStorefrontView();
+  return <>
+    <section className="hero section-shell"><div className="hero-copy"><p className="eyebrow">Organization without remodeling</p><h1>A calmer home, without changing the house.</h1><p className="hero-lede">Small, reversible tools for the spaces that fight back. We measure first, explain the tradeoffs, and recommend less when less will do.</p><div className="button-row"><Link className="button button-primary" href="/shop">Explore the three candidates</Link><Link className="button button-quiet" href="/our-standard">How our standard works</Link></div><ul className="proof-row" aria-label="Little Built principles"><li>No drilling</li><li>No remodel</li><li>No false certainty</li></ul></div><div className="hero-visual" aria-label="Candidate organization tool shown as a concept form"><div className="hero-note"><span>01</span> Measure the space</div><ProductSketch kind="under-sink" large /><div className="measure-line"><span>fit before features</span></div></div></section>
+    <section className="brand-statement section-shell rule-top"><p className="section-index">Our promise / 001</p><h2>{brand.promise}</h2><p>The product is not the point. The better everyday system is. If a basic bin, a clean-out, or doing nothing is the better answer, we should be the first to say so.</p></section>
+    <section className="section-shell products-section"><div className="section-heading"><div><p className="eyebrow">The first three</p><h2>One room. Three points of friction.</h2></div><p>These are product hypotheses, not inventory. Each still has to earn its place through real samples, verified dimensions, and honest economics.</p></div><div className="product-grid">{products.map((product, index) => <ProductCard key={product.slug} product={product} index={index + 1} />)}</div></section>
+    <section className="standard-band"><div className="section-shell standard-grid"><div><p className="eyebrow light">A recommendation should reduce doubt</p><h2>Reasons to buy. Reasons not to. Both belong on the page.</h2></div><ol className="standard-steps"><li><span>01</span><div><strong>Diagnose</strong><p>Is storage really the problem?</p></div></li><li><span>02</span><div><strong>Measure</strong><p>Will it fit the actual space?</p></div></li><li><span>03</span><div><strong>Choose</strong><p>Does the upgrade earn its cost?</p></div></li></ol></div></section>
+    <section className="section-shell closing-callout"><p className="eyebrow">Storefront Zero</p><h2>Nothing here is for sale yet. That is part of the promise.</h2><p>We would rather show you what remains unknown than turn an unfinished idea into a finished claim.</p><Link className="text-link" href="/about">Why we are building in private first <span aria-hidden="true">→</span></Link></section>
+  </>;
+}

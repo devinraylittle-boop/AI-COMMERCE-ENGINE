@@ -38,6 +38,8 @@ Company 001 — focused storefront execution. The mission is to build a small, p
 - Corrected the calibration governance after recognizing that public reference exposure prevents a blind test: separated open training from formal calibration; defined Case Steward, Packet Custodian, Coder A/B, Arbiter, and Mechanism Owner roles; excluded prior designers and reference viewers from coder roles; and added eligibility, custody, anonymization, arbitration, and fresh-AI controls.
 - Completed a manual Home Organization Behavioral Signal Sprint across pantry, garage, under-sink, closet, refrigerator, bathroom, laundry, small-apartment, toy, and RV contexts; preserved 34 source-grounded observations; ranked six dimensions separately; selected three finalists; and identified refrigerator aesthetics, toy storage, and garage systems as the most dangerous current false positives.
 - Reset Company 001 around a three-to-five-product storefront; created the Founding Five recommendation set, selected a coherent three-product kitchen/utility launch trio, defined two reserves, documented one honest recommendation page per product, and set sourcing, sample, shipping, claim, and contribution-margin gates.
+- Built Storefront Zero as a private, non-indexed Little Built concept with a homepage, collection, three candidate product pages, About, FAQ, draft shipping/returns principles, and a recommendation standard. Checkout, pricing, supplier claims, customer data collection, and artificial urgency remain absent.
+- Passed the executable Delete Test with one candidate removed and again with two removed; the brand promise, position, and recommendation principles remain intact with a one-product catalog.
 - Placed Learning ROI in observation-only status until multiple experiments reveal how the metric behaves and can be gamed.
 
 ## Current architecture
@@ -57,11 +59,11 @@ Streamlit is a thin presentation layer over Pydantic contracts, repository funct
 
 ## Immediate next actions
 
-1. Obtain founder authorization to contact YouCopia wholesale, Joseph Joseph trade, the named Faire wholesalers, and DEKAVA using the fixed sourcing inquiry; commit no funds.
-2. Compare written pricing, MOQ, location, lead time, packaging, materials, claims, defect/replacement terms, channel restrictions, and estimated landed cost.
-3. Request founder approval for no more than two samples per candidate only after the quote comparison eliminates weak paths.
-4. Test samples against the published product briefs and reject any SKU that misses quality, fit, shipping, or contribution-margin gates.
-5. Build and publish the minimal storefront only after one approved SKU exists for each launch product and real product data can replace hypotheses.
+1. Founder reviews Storefront Zero as a buying experience: promise clarity, trust, collection coherence, navigation, no-buy guidance, and the working Little Built identity.
+2. Record where the prototype creates confidence, confusion, or a desire for evidence; do not convert preferences into architecture automatically.
+3. Decide whether the storefront has earned one explicitly approved supplier learning conversation and which single candidate should lead it.
+4. If approved later, use that conversation to test the quality standard and information requirements—not to negotiate, buy inventory, or imply a commitment.
+5. Replace candidate copy, dimensions, claims, prices, policies, and product visuals only as verified product and operating evidence becomes available.
 
 All laboratory expansion, cross-domain tournaments, diagnostic calibration, behavioral modeling, dashboards, and reusable discovery architecture move to the backlog unless they directly remove a launch blocker.
 
@@ -87,6 +89,7 @@ mypy src
 - Scores are snapshots containing components, weights, penalties, rationale, actor, and timestamp.
 - Consequential status changes require a reason and create history plus audit rows.
 - All outside actions remain manual and require human approval.
+- Storefront Zero decision: supplier outreach remains unauthorized; the private prototype exists to evaluate the company and buying experience before any outreach. Little Built is a working brand hypothesis, not a final naming or trademark decision.
 - Work Order 003 decisions: uploaded file bytes are not retained; import batches and original review bodies are immutable in ORM paths; duplicates remain inspectable; fuzzy matching requires same source/rating/non-missing date and 96% similarity; reclassification preserves human-added themes; all analytics are explicitly sample-scoped.
 - Verification on 2026-07-14: Ruff and format clean, mypy clean across 34 source files, 39 tests passing at 59% aggregate statement coverage, all three Mechanism Cards valid under the $75 aggregate ceiling, and diff whitespace clean. Existing migration lifecycle, import, Review Mining smoke, and fictional-seed tests remain in the passing suite.
 
